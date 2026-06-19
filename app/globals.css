@@ -3,25 +3,72 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: white;
+  --background-rgb: #089090;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-rgb: 0, 0, 0;
   }
 }
 
+.all {
+  min-height: 1000vh;
+  background-color: #089090aa;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: url('../public/vector.jpg') center  repeat;
+  min-height: 10vh;
+  color: var(--foreground-rgb);
+  background-color: var(--background-rgb);
+}
+
+.navbar {
+  position: fixed;
+
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  height: 10%;
+  width: 80%;
+  /* padding: 15px; */
+
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+
+  border-radius: 0 0 12px 12px;
+
+  display: flex;
+  justify-content: space-evenly;
+
+  transition: transform 0.3s ease;
+}
+
+.nav-links {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.navbar div:hover {
+  cursor: pointer;
+}
+.logo {
+  justify-content: center;
+}
+.imglogo {
+  height: 100%;
+  width: 60%;
+  /* object-fit: contain; */
+}
+
+.navbar.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+
+.navbar.hide {
+  transform: translateX(-50%) translateY(-130%);
 }
