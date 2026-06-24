@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Firasans';
+  src: url('/fonts/FiraSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   /* --foreground-rgb: white; */
   --foreground-rgb: black;
@@ -14,17 +21,22 @@
     --background-rgb: 0, 0, 0;
   }
 }
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 
 .all {
   min-height: 1000vh;
-  background-color: #089090aa;
+  background-color: #ffffffc7;
 }
 
 body {
-  background: url('../public/vector.jpg') center  repeat;
+  background: url('../public/vector.jpg') repeat center / 240px;
   min-height: 10vh;
   color: var(--foreground-rgb);
-
+  font-family: 'Firasans', sans-serif !important;
 }
 
 .navbar li:hover {
@@ -44,4 +56,22 @@ nav.show {
 
 nav.hide {
   transform: translateX(-50%) translateY(-400%);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-20px) translateX(15px);
+  }
+}
+
+@keyframes drift {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(25px) translateX(-20px);
+  }
 }
