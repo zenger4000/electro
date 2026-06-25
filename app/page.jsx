@@ -7,6 +7,7 @@ import science from "../public/science.svg"
 import hydration from "../public/hydration.svg"
 import mineral from "../public/mineral.svg"
 import Ion from "./Ion"
+import Features from "./Features"
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
         <div>
           <Image className="object-cover min-w-full h-screen md:h-full drop-shadow-[0_8px_10px_rgba(0,0,0,0.3)]" src={hero} alt="electrolytes power our lives"></Image>
         </div>
-        <div className="bg-white/50 min-h-[200px] p-9">
+        <div className="bg-white/30 min-h-[200px] p-9">
           <h1 className="text-5xl font-bold text-[#089090]">
             Electrolytes made simple
           </h1>
@@ -60,12 +61,13 @@ export default function Home() {
           </div>
         </TiltCard>
       </div>
-      <div className="flex-col md:flex-row bg-slate-900 text-white flex rounded-2xl justify-center items-center m-6 h-auto">
-        <div className="p-9 w-1/2">
-          <h2 className="text-5xl font-bold">What are Electrolytes ?</h2><br /><br />
-          <div className="text-4xl">                       
+      <div className="flex-col md:flex-row bg-black text-white flex justify-center items-center h-auto">
+        <div className="p-6 md:p-6 md:w-1/2 w-full">
+          <h2 className=" text-3xl md:text-5xl font-bold">What are Electrolytes ?</h2><br /><br />
+          <div className="text-2xl md:text-4xl">
+          Electrolytes are minerals that carry an electrical charge.                    
             They help regulate: <br /><br />
-            <div className="ml-12">
+            <div className="md:ml-12">
             ✓ Hydration <br />
             ✓ Nerve signals<br />
             ✓ Muscle contractions<br />
@@ -77,6 +79,7 @@ export default function Home() {
         </div>
         <Ion></Ion>
       </div>
+      <Features></Features>
     </main>
     </div>
   )

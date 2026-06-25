@@ -83,7 +83,7 @@ export default function TiltCard({ children }) {
   };
 
   return (
-    <div className="[perspective:800px]">
+    <div className="[perspective:800px] md:w-[calc(50%-1rem)] flex justify-center">
       <div
         ref={cardRef}
         onMouseMove={handleMove}
@@ -125,7 +125,7 @@ export default function TiltCard({ children }) {
           "
           style={{
             background:
-              "radial-gradient(circle at var(--x) var(--y), #0f172a, transparent 60%)",
+              "radial-gradient(circle at var(--x) var(--y), #1f2b47, transparent 60%)",
           }}
         />
 
