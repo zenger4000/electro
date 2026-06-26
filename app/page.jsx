@@ -1,4 +1,3 @@
-import Navbar from "./navbar"
 import Image from "next/image"
 import hero from "../public/hero.png"
 import TiltCard from "./Tiltcard"
@@ -12,16 +11,15 @@ import Features from "./Features"
 export default function Home() {
   return (
     <div className="all">
-      <Navbar></Navbar>
       <main>
         <div>
           <Image className="object-cover min-w-full h-screen md:h-full drop-shadow-[0_8px_10px_rgba(0,0,0,0.3)]" src={hero} alt="electrolytes power our lives"></Image>
         </div>
-        <div className="bg-white/30 min-h-[200px] p-9">
-          <h1 className="text-5xl font-bold text-[#089090]">
+        <div className="bg-white/90 min-h-[200px] p-9">
+          <h1 className="md:text-5xl text-3xl font-bold text-[#089090]">
             Electrolytes made simple
           </h1>
-          <p className="text-black m-5 text-4xl leading-relaxed tracking-wide">
+          <p className="text-black m-5 text-2xl md:text-4xl leading-relaxed tracking-wide">
           Understand hydration, discover electrolyte-rich foods, calculate your needs, and learn how sodium, potassium, magnesium, and other essential minerals power your body.
           </p>
         </div>

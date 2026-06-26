@@ -1,31 +1,36 @@
+"use client";
 export default function Page() {
     const cards = [
       {
         title: "Sodium",
         color: "rgba(59,130,246,.45)",
         hoverColor: "rgba(59,130,246,.18)",
-        icon: "⚡",
+        icon: "Na",
+        ion: "+",
         transform: "  scale(.88)",
       },
       {
         title: "Potassium",
         color: "rgba(249,115,22,.40)",
         hoverColor: "rgba(249,115,22,.18)",
-        icon: "💧",
+        icon: "K",
+        ion: "+",
         transform: "  scale(.88)",
       },
       {
         title: "Magnesium",
         color: "rgba(168,85,247,.40)",
         hoverColor: "rgba(168,85,247,.18)",
-        icon: "📈",
+        icon: "Mg",
+        ion: "2+",
         transform: "  scale(.88)",
       },
       {
         title: "Calcium",
         color: "rgba(16,185,129,.40)",
         hoverColor: "rgba(16,185,129,.18)",
-        icon: "🛡️",
+        icon: "Ca",
+        ion: "2+",
         transform: " scale(.88)",
       },
     ];
@@ -55,7 +60,8 @@ export default function Page() {
                     w-[300px]
                     md:w-[600px]
                     xl:w-[300px]
-                    h-[560px]
+                    h-[450px]
+                    md:h-[560px]
                     rounded-[32px]
                     overflow-hidden
                     bg-[#090909]
@@ -122,14 +128,16 @@ export default function Page() {
                   <div className="relative z-10 h-full flex flex-col p-10">
                     <div
                       className="
+                        text-white
                         text-6xl
-                        mb-24
+                        mb-12
+                        md:mb-24
                         transition-transform
                         duration-500
                         group-hover:scale-110
                       "
                     >
-                      {card.icon}
+                      {card.icon}<sup>{card.ion}</sup>
                     </div>
   
                     <h2 className="text-white text-4xl font-light mb-8">

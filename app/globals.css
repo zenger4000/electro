@@ -36,7 +36,7 @@ body {
   background: url('../public/vector.jpg') repeat center / 240px;
   min-height: 10vh;
   color: var(--foreground-rgb);
-  font-family: 'Firasans', sans-serif !important;
+  font-family: 'Firasans', sans-serif;
 }
 
 .navbar li:hover {
@@ -74,4 +74,17 @@ nav.hide {
   50% {
     transform: translateY(25px) translateX(-20px);
   }
+}
+
+@keyframes gradient {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 6s linear infinite;
 }
