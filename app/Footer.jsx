@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-      <footer className="border-t border-zinc-800 bg-zinc-950 text-zinc-400">
+      <footer className="border-t  bg-zinc-950 text-zinc-400">
         <div className="relative h-2 overflow-hidden">
           <div className="absolute inset-0 animate-gradient bg-[length:200%_100%] bg-gradient-to-r from-blue-950 via-[#089090] to-blue-950" />
         </div>

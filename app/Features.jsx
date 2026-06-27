@@ -37,7 +37,7 @@ export default function Page() {
   
     return (
       <section className="min-h-screen bg-black overflow-hidden flex items-center justify-center flex-col">
-        <h2 className="text-white text-3xl md:text-5xl font-bold my-10">Explore the Major Electrolytes</h2>
+        <h2 className="text-[#25aaaa] text-3xl md:text-5xl font-bold my-10">Explore the Major Electrolytes</h2>
         <div className="[perspective:1000px]">
           <div
             className="flex items-center justify-center md:gap-52 flex-col xl:flex-row xl:[transform:rotateX(8deg)]"

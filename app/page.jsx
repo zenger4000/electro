@@ -13,13 +13,13 @@ export default function Home() {
     <div className="all">
       <main>
         <div>
-          <Image className="object-cover min-w-full h-screen md:h-full drop-shadow-[0_8px_10px_rgba(0,0,0,0.3)]" src={hero} alt="electrolytes power our lives"></Image>
+          <Image className="object-cover min-w-full h-screen md:h-full drop-shadow-[0_8px_10px_rgba(0,0,0,0.3)]" src={hero} alt="electrolytes power our lives" quality={100}></Image>
         </div>
-        <div className="bg-white/90 min-h-[200px] p-9">
-          <h1 className="md:text-5xl text-3xl font-bold text-[#089090]">
+        <div className="bg-black min-h-[200px] p-9">
+          <h1 className="md:text-5xl text-3xl font-bold text-[#25aaaa]">
             Electrolytes made simple
           </h1>
-          <p className="text-black m-5 text-2xl md:text-4xl leading-relaxed tracking-wide">
+          <p className="text-white m-5 text-2xl md:text-4xl leading-relaxed tracking-wide">
           Understand hydration, discover electrolyte-rich foods, calculate your needs, and learn how sodium, potassium, magnesium, and other essential minerals power your body.
           </p>
         </div>
@@ -61,7 +61,7 @@ export default function Home() {
       </div>
       <div className="flex-col md:flex-row bg-black text-white flex justify-center items-center h-auto">
         <div className="p-6 md:p-6 md:w-1/2 w-full">
-          <h2 className=" text-3xl md:text-5xl font-bold">What are Electrolytes ?</h2><br /><br />
+          <h2 className=" text-3xl md:text-5xl text-[#25aaaa] font-bold">What are Electrolytes ?</h2><br /><br />
           <div className="text-2xl md:text-4xl">
           Electrolytes are minerals that carry an electrical charge.                    
             They help regulate: <br /><br />
