@@ -12,7 +12,7 @@
 :root {
   /* --foreground-rgb: white; */
   --foreground-rgb: black;
-  --background-rgb: #089090;
+  --background-rgb: #25aaaa;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +37,20 @@ body {
   min-height: 10vh;
   color: var(--foreground-rgb);
   font-family: 'Firasans', sans-serif;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Control your colors and direction here */
+  background: linear-gradient(to bottom, rgba(255, 0, 0, 1) 0%, rgba(0, 0, 255, 0.7) 100%);
+  
+  pointer-events: none; /* Secret tip: Allows users to right-click/save the image underneath */
 }
 
 .navbar li:hover {

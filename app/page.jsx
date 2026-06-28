@@ -7,13 +7,15 @@ import hydration from "../public/hydration.svg"
 import mineral from "../public/mineral.svg"
 import Ion from "./Ion"
 import Features from "./Features"
+import SearchBar from "./search/SearchBar"
 
 export default function Home() {
   return (
     <div className="all">
-      <main>
+      <main className="">
+      <SearchBar />
         <div>
-          <Image className="object-cover min-w-full h-screen md:h-full drop-shadow-[0_8px_10px_rgba(0,0,0,0.3)]" src={hero} alt="electrolytes power our lives" quality={100}></Image>
+          <Image className="object-cover min-w-full h-screen md:h-full hero" src={hero} alt="electrolytes power our lives" quality={100}></Image>
         </div>
         <div className="bg-black min-h-[200px] p-9">
           <h1 className="md:text-5xl text-3xl font-bold text-[#25aaaa]">
