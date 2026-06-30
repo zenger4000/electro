@@ -12,9 +12,10 @@ import SearchBar from "./search/SearchBar"
 export default function Home() {
   return (
     <div className="all">
-      <main className="">
-      <SearchBar />
-        <div>
+      <main>
+        <div className="relative">
+          <SearchBar />
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent to-black"></div>
           <Image className="object-cover min-w-full h-screen md:h-full hero" src={hero} alt="electrolytes power our lives" quality={100}></Image>
         </div>
         <div className="bg-black min-h-[200px] p-9">

@@ -1,17 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useState , useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function SearchPage() {
-  const [query, setQuery] = useState("");
+
+  const searchParams = useSearchParams();
+  const urlQuery = searchParams.get("q") ?? "";
+  const [query, setQuery] = useState((urlQuery));
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(false);
+  const router = useRouter()
 
-  async function handleSearch(e) {
-    e.preventDefault();
+  useEffect(()=> {
+  handleSearch(urlQuery);
+  setQuery(urlQuery)
+  },[urlQuery])
 
-    if (!query.trim()) return;
+  function handleClick(e) {
+    e.preventDefault()
+    const trimmedQuery = query.trim()
+    if (!trimmedQuery) return;
+    router.push(`/search?q=${encodeURIComponent(trimmedQuery)}`);
+  }
 
+  async function handleSearch(searchQuery) {
+    if (!searchQuery.trim()) return;
     setLoading(true);
 
     try {
@@ -21,7 +35,7 @@ export default function SearchPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          query,
+          query : searchQuery,
         }),
       });
 
@@ -36,14 +50,14 @@ export default function SearchPage() {
   }
 
   return (
-    <main className="mx-auto max-w-3xl p-8 bg-[#25aaaa]">
+    <main className="mx-auto max-w-4xl p-8 bg-[#25aaaa]">
 
       <h1 className="text-4xl font-bold mb-8">
         Search Foods
       </h1>
 
       <form
-        onSubmit={handleSearch}
+        onSubmit={handleClick}
         className="flex gap-3 mb-8"
       >
         <input
