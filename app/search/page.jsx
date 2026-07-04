@@ -8,8 +8,9 @@ export default function SearchPage() {
   const searchParams = useSearchParams();
   const urlQuery = searchParams.get("q") ?? "";
   const [query, setQuery] = useState((urlQuery));
-  const [foods, setFoods] = useState([]);
+  const [foods, setFoods] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState(null)
   const router = useRouter()
 
   useEffect(()=> {
@@ -27,6 +28,7 @@ export default function SearchPage() {
   async function handleSearch(searchQuery) {
     if (!searchQuery.trim()) return;
     setLoading(true);
+    setErr(null)
 
     try {
       const response = await fetch("/api/search", {
@@ -40,19 +42,27 @@ export default function SearchPage() {
       });
 
       const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || "Search failed.");
+      }
+
 
       setFoods(data.foods || []);
     } catch (err) {
       console.error(err);
+      setErr(err)
+    } finally {
+      setLoading(false);
     }
 
-    setLoading(false);
   }
 
   return (
-    <main className="mx-auto max-w-4xl p-8 bg-[#25aaaa]">
+    <div className="pt-20">
+    <main className=" mx-auto md:p-24 p-8 min-h-[90vh] text-white bg-zinc-950 transition-all">
 
-      <h1 className="text-4xl font-bold mb-8">
+      <h1 className=" text-2xl md:text-4xl font-bold mb-8">
         Search Foods
       </h1>
 
@@ -61,28 +71,30 @@ export default function SearchPage() {
         className="flex gap-3 mb-8"
       >
         <input
-          className="flex-1 rounded-lg border p-3"
+          className="flex-1 rounded-lg border-2 p-3  focus:border-[#25aaaa] focus:outline-none"
           placeholder="Search foods..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
 
         <button
-          className="rounded-lg bg-blue-600 px-6 text-white"
+          className="rounded-lg bg-[#25aaaa] px-2 md:px-6 text-white"
         >
           Search
         </button>
       </form>
 
-      {loading && <p>Searching...</p>}
+      {loading && <p className="mb-8">Searching...</p>}
+      {err && <p>{err.message}</p>}
+      {foods?.length === 0 && <p>No foods found.</p>}
 
       <div className="space-y-3">
 
-        {foods.map((food) => (
+        {foods && foods.map((food) => (
 
           <div
             key={food.fdcId}
-            className="rounded-lg border p-4 hover:bg-gray-100 transition"
+            className="rounded-lg border p-4 hover:bg-[#25aaaa] transition"
           >
             <h2 className="font-semibold">
               {food.description}
@@ -96,7 +108,7 @@ export default function SearchPage() {
         ))}
 
       </div>
-
     </main>
+    </div>
   );
 }

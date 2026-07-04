@@ -3,19 +3,19 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-      <footer className="border-t  bg-zinc-950 text-zinc-400">
+      <footer className="border-t border-hidden  bg-zinc-950 text-zinc-400">
         <div className="relative h-2 overflow-hidden">
-          <div className="absolute inset-0 animate-gradient bg-[length:200%_100%] bg-gradient-to-r from-blue-950 via-[#089090] to-blue-950" />
+          <div className="absolute inset-0 animate-gradient bg-[length:200%_100%] bg-gradient-to-r from-zinc-950 via-[#25aaaa]  to-zinc-950 " />
         </div>
         <div className="mx-auto max-w-7xl px-6 py-12">
-          <div className="grid gap-10 md:grid-cols-3">
+          <div className="grid gap-10 grid-cols-3">
             {/* Brand */}
-            <div>
-                <div className="p-0 -mt-16">
+            <div className="col-span-3 md:col-span-1">
+                <div className="mb-4 -mt-6">
                     <Image src={logo} alt="logo" width={200}></Image>
                 </div>
   
-              <p className="-mt-8 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed">
                 Evidence-based information about electrolytes,
                 hydration, nutrition, and human physiology,
                 organized in an accessible way for learners,
@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
   
             {/* Navigation */}
-            <div className="md:mx-auto">
+            <div className="mx-auto">
               <h4 className="mb-3 font-semibold text-white">
                 Explore
               </h4>
@@ -69,7 +69,7 @@ export default function Footer() {
             </div>
   
             {/* Disclaimer */}
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <h4 className="mb-3 font-semibold text-white">
                 Medical Disclaimer
               </h4>

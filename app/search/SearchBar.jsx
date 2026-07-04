@@ -11,11 +11,11 @@ const SearchBar = () => {
     e.preventDefault();
 
     const trimmedQuery = userQuery.trim();
-
-    if (!trimmedQuery) return;
-
+    
     router.push(
-      `/search?q=${encodeURIComponent(trimmedQuery)}`
+      trimmedQuery
+      ? `/search?q=${encodeURIComponent(trimmedQuery)}`
+      : "/search"
     );
   }
 

@@ -107,7 +107,7 @@ export default function TiltCard({ children }) {
           h-[200px]
           rounded-2xl
           overflow-hidden
-          bg-zinc-900
+          bg-black
           text-white
           [transform-style:preserve-3d]
           will-change-transform

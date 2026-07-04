@@ -11,8 +11,8 @@ import SearchBar from "./search/SearchBar"
 
 export default function Home() {
   return (
-    <div className="all">
-      <main>
+
+      <main id="top">
         <div className="relative">
           <SearchBar />
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent to-black"></div>
@@ -62,18 +62,18 @@ export default function Home() {
           </div>
         </TiltCard>
       </div>
-      <div className="flex-col md:flex-row bg-black text-white flex justify-center items-center h-auto">
+      <div className="flex-col md:flex-row bg-zinc-950 text-white flex justify-center items-center h-auto">
         <div className="p-6 md:p-6 md:w-1/2 w-full">
           <h2 className=" text-3xl md:text-5xl text-[#25aaaa] font-bold">What are Electrolytes ?</h2><br /><br />
           <div className="text-2xl md:text-4xl">
           Electrolytes are minerals that carry an electrical charge.                    
             They help regulate: <br /><br />
             <div className="md:ml-12">
-            ✓ Hydration <br />
-            ✓ Nerve signals<br />
-            ✓ Muscle contractions<br />
-            ✓ Heart rhythm<br />
-            ✓ pH balance
+            <span className="text-[#25aaaa]">✓</span> Hydration <br />
+            <span className="text-[#25aaaa]">✓</span> Nerve signals<br />
+            <span className="text-[#25aaaa]">✓</span> Muscle contractions<br />
+            <span className="text-[#25aaaa]">✓</span> Heart rhythm<br />
+            <span className="text-[#25aaaa]">✓</span> pH balance
             </div>
 
           </div>
@@ -82,6 +82,5 @@ export default function Home() {
       </div>
       <Features></Features>
     </main>
-    </div>
   )
 }

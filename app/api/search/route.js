@@ -11,7 +11,7 @@ export async function POST(request) {
         { status: 400 }
       );
     }
-
+    
     const response = await fetch(
       `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${process.env.FDC_API_KEY}`,
       {

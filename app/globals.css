@@ -27,13 +27,9 @@
   box-sizing: border-box;
 }
 
-.all {
-  min-height: 1000vh;
-  background-color: #ffffffc7;
-}
 
 body {
-  background: url('../public/vector.jpg') repeat center / 240px;
+  background-color: #09090b;
   min-height: 10vh;
   color: var(--foreground-rgb);
   font-family: 'Firasans', sans-serif;
@@ -69,7 +65,7 @@ nav.show {
 
 
 nav.hide {
-  transform: translateX(-50%) translateY(-400%);
+  transform: translateX(-50%) translateY(-450%);
 }
 
 @keyframes float {

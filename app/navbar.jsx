@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logo from "../public/logopng.png"
+import Link from "next/link";
 
 export default function Navbar() {
 
@@ -28,7 +29,9 @@ export default function Navbar() {
   return (
     <nav className= {`z-20 bg-white transition-all duration-300  fixed w-4/5 rounded-b-[12px] left-1/2 -translate-x-1/2 shadow-lg ${show ? "show" : "hide"}`}>
       <div className="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
-        <Image src={logo} alt="logo" width={200}></Image>
+        <Link  href={"/#"}>
+          <Image src={logo} alt="logo" width={200}></Image>
+        </Link>
         {/* Desktop Menu */} 
         <ul className="hidden md:flex gap-8">
           <li><a href="#">Home global</a></li>
@@ -42,7 +45,7 @@ export default function Navbar() {
         </button> 
         </div> 
         {/* Mobile Menu */} 
-        <div className={`md:hidden absolute  rounded-[12px] top-20 left-0 w-full text-black bg-white transition-all duration-300 overflow-hidden ${ isOpen ? "max-h-96 py-4" : "max-h-0" }`} > 
+        <div className={`md:hidden absolute shadow-lg rounded-[12px] top-20 left-0 w-full text-black bg-white transition-all duration-300 overflow-hidden ${ isOpen ? "max-h-96 py-4" : "max-h-0" }`} > 
           <ul className="flex flex-col items-center gap-4"> 
             <li><a href="#">Home global</a></li> 
             <li><a href="#">About</a></li> 
