@@ -12,11 +12,31 @@ export default function SearchPage() {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState(null)
   const router = useRouter()
+  const [pagination, setPagination] = useState({
+    currentPage: 1,
+    totalPages: 0,
+    totalHits: 0,
+  });
+  const urlPage = Number(searchParams.get("page") ?? 1);
+
+  // Pagination setup
+  const maxButtons = 5;
+  let startPage = Math.max(1, urlPage - Math.floor(maxButtons / 2));
+  let endPage = Math.min(
+    pagination.totalPages,
+    startPage + maxButtons - 1
+  );
+  startPage = Math.max(1, endPage - maxButtons + 1);
+  const pages = [];
+
+  for (let i = startPage; i <= endPage; i++) {
+    pages.push(i);
+  }
 
   useEffect(()=> {
   handleSearch(urlQuery);
   setQuery(urlQuery)
-  },[urlQuery])
+  },[urlQuery , urlPage])
 
   function handleClick(e) {
     e.preventDefault()
@@ -31,15 +51,9 @@ export default function SearchPage() {
     setErr(null)
 
     try {
-      const response = await fetch("/api/search", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query : searchQuery,
-        }),
-      });
+      const response = await fetch(
+        `/api/search?q=${encodeURIComponent(searchQuery)}&page=${urlPage}`
+      );
 
       const data = await response.json();
       
@@ -47,8 +61,9 @@ export default function SearchPage() {
         throw new Error(data.error || "Search failed.");
       }
 
-      setFoods(data.foods || []);
-      
+      setFoods(data.foods);
+      setPagination(data.pagination);
+
     } catch (err) {
       console.error(err);
       setErr(err)
@@ -62,9 +77,11 @@ export default function SearchPage() {
     <div className="pt-20">
     <main className=" mx-auto w-11/12 border border-white rounded-3xl mb-12 md:p-24 p-8 min-h-[80vh] text-white bg-zinc-950 transition-all">
 
-      <h1 className=" text-2xl md:text-4xl font-bold mb-8">
+      <h1 className="inline-block text-2xl md:text-4xl font-bold mb-8">
         Search Foods
       </h1>
+
+      {loading && <p className="inline-block mx-8">Searching...</p>}
 
       <form
         onSubmit={handleClick}
@@ -84,10 +101,48 @@ export default function SearchPage() {
         </button>
       </form>
 
-      {loading && <p className="mb-8">Searching...</p>}
       {err && <p>{err.message}</p>}
       {foods?.length === 0 && <p>No foods found.</p>}
 
+      {/* pagination */}
+      {!!pagination.totalHits && <div className="flex justify-center items-center flex-col"><p className="mb-8">
+        {pagination.totalHits} results • Page {urlPage} of{" "}{pagination.totalPages}
+      </p>
+        <div className="mb-3 ">
+        <button
+        disabled={urlPage === 1}
+        onClick={() => router.push(
+          `/search?q=${encodeURIComponent(urlQuery)}&page=${urlPage - 1}`)}
+        className="hover:text-[#83cccc]"
+      >
+        Prev
+      </button>
+      {pages.map((pageNumber) => (
+        <button
+          key={pageNumber}
+          onClick={() =>router.push(
+           (pageNumber === 1)
+          ? `/search?q=${encodeURIComponent(urlQuery)}`
+          : `/search?q=${encodeURIComponent(urlQuery)}&page=${pageNumber}`
+            )}
+          className={`${pagination.currentPage === pageNumber  ? "text-[#25aaaa]" : ""} mx-2 hover:text-[#83cccc]`}
+        >
+          {pageNumber}
+        </button>
+      ))}
+
+      <button
+        disabled={urlPage === pagination.totalPages}
+        onClick={() => router.push(`/search?q=${encodeURIComponent(urlQuery)}&page=${urlPage + 1}`)}
+        className="hover:text-[#83cccc]"
+      >
+        Next
+      </button>
+        </div>
+      </div>
+      }
+
+      {/* Food Results */}
       <div className="space-y-3">
 
         {foods && foods.map((food) => (

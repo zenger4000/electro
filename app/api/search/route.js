@@ -1,9 +1,12 @@
 import { NextResponse } from "next/server";
 
-export async function POST(request) {
+export async function GET(request) {
   const dataTypes = ["Foundation", "Branded"];
   try {
-    const { query } = await request.json();
+    
+    const { searchParams } = new URL(request.url);
+    const query = searchParams.get("q");
+    const page = Number(searchParams.get("page") ?? 1);
 
     if (!query) {
       return NextResponse.json(
@@ -25,11 +28,21 @@ export async function POST(request) {
         body: JSON.stringify({
           query,
           pageSize: 10,
-          pageNumber: 1,
+          pageNumber: page,
           dataType: dataTypes
         }),
       }
     );
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("USDA Error:", response.status, errorText);
+    
+      return NextResponse.json(
+        { error: errorText },
+        { status: response.status }
+      );
+    }
 
     const data = await response.json();
 
@@ -42,8 +55,10 @@ export async function POST(request) {
       },
     });
   } catch (error) {
+    console.error(error)
+    console.error(error.cause);
     return NextResponse.json(
-      { error: "Something went wrong." },
+      { error: error.message },
       { status: 500 }
     );
   }
