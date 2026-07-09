@@ -8,6 +8,7 @@ export default function Page() {
         icon: "Na",
         ion: "+",
         transform: "  scale(.88)",
+        description: "The body's primary extracellular electrolyte, sodium regulates fluid balance, supports nerve signaling, and helps maintain healthy blood pressure."
       },
       {
         title: "Potassium",
@@ -16,6 +17,7 @@ export default function Page() {
         icon: "K",
         ion: "+",
         transform: "  scale(.88)",
+        description: "Found inside every cell, potassium powers muscle contractions, enables nerve communication, and keeps the heart beating steadily."
       },
       {
         title: "Magnesium",
@@ -24,6 +26,7 @@ export default function Page() {
         icon: "Mg",
         ion: "2+",
         transform: "  scale(.88)",
+        description: "Essential for hundreds of enzymatic reactions, magnesium supports energy production, muscle relaxation, and healthy nervous system function."
       },
       {
         title: "Calcium",
@@ -32,11 +35,12 @@ export default function Page() {
         icon: "Ca",
         ion: "2+",
         transform: " scale(.88)",
+        description: "Beyond strengthening bones, calcium drives muscle contraction, nerve signaling, blood clotting, and countless cellular functions."
       },
     ];
   
     return (
-      <section className="min-h-[1200px] bg-black overflow-hidden flex items-center justify-center flex-col">
+      <section className="md:min-h-[1200px] bg-black overflow-hidden flex items-center justify-center flex-col">
         <h2 className="text-[#25aaaa] text-3xl md:text-5xl font-bold my-10">Explore the Major Electrolytes</h2>
         <div className="[perspective:1000px]">
           <div
@@ -140,22 +144,23 @@ export default function Page() {
                       {card.icon}<sup>{card.ion}</sup>
                     </div>
   
-                    <h2 className="text-white text-4xl font-light mb-8">
+                    <h2 className="text-white text-4xl font-light -mt-12 mb-4">
                       {card.title}
                     </h2>
   
                     <p
                       className="
                         text-zinc-400
-                        text-xl
+                        text-lg
+                        md:text-xl
+                        md:mt-6
                         leading-relaxed
                         transition-colors
                         duration-500
                         group-hover:text-white
                       "
                     >
-                      Premium feature description that demonstrates
-                      the layout and spacing.
+                      {card.description}
                     </p>
   
                     <div

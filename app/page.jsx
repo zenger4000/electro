@@ -1,13 +1,15 @@
 import Image from "next/image"
 import hero from "../public/hero.png"
-import TiltCard from "./Tiltcard"
 import food from "../public/food.svg"
 import science from "../public/science.svg"
 import hydration from "../public/hydration.svg"
 import mineral from "../public/mineral.svg"
+import calculator from "../public/calculator.svg"
+import healthy from "../public/healthy.svg"
 import Ion from "./Ion"
 import Features from "./Features"
 import SearchBar from "./search/SearchBar"
+import TiltCard from "./Tiltcard"
 
 export default function Home() {
   return (
@@ -18,7 +20,7 @@ export default function Home() {
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent to-black"></div>
           <Image className="object-cover min-w-full h-screen md:h-full hero" src={hero} alt="electrolytes power our lives" quality={100}></Image>
         </div>
-        <div className="bg-black min-h-[200px] p-9">
+        <div className="bg-black min-h-[200px] p-9 -mt-8">
           <h1 className="md:text-5xl text-3xl font-bold text-[#25aaaa]">
             Electrolytes made simple
           </h1>
@@ -26,7 +28,7 @@ export default function Home() {
           Understand hydration, discover electrolyte-rich foods, calculate your needs, and learn how sodium, potassium, magnesium, and other essential minerals power your body.
           </p>
         </div>
-      <div className="flex justify-center items-center gap-8 flex-wrap min-h-screen bg-black p-12 shadow-[0_-8px_10px_rgba(0,0,0,0.3)]">
+      <div className="flex justify-center items-center gap-8 flex-wrap min-h-screen bg-zinc-950 p-12 shadow-[0_-8px_10px_rgba(0,0,0,0.3)]">
         <TiltCard>
           <div className="p-6 flex justify-center items-center flex-col gap-2">
             <h2 className="text-xl font-bold">
@@ -39,7 +41,7 @@ export default function Home() {
         <TiltCard>
           <div className="p-6 flex justify-center items-center flex-col gap-2">
             <h2 className="text-xl font-bold">
-            10,000+ Foods Indexed
+            100,000+ Foods Indexed
             </h2>
             <Image className="w-1/2" src={food} alt="food icon"></Image>
           </div>
@@ -51,6 +53,22 @@ export default function Home() {
             Multiple Hydration Tools
             </h2>
             <Image className="w-1/2" src={hydration} alt="food icon"></Image>
+          </div>
+        </TiltCard>
+        <TiltCard>
+          <div className="p-6 flex justify-center items-center flex-col gap-2">
+            <h2 className="text-xl font-bold">
+            Nutrition Calculators
+            </h2>
+            <Image className="w-1/2" src={calculator} alt="food icon"></Image>
+          </div>
+        </TiltCard>
+        <TiltCard>
+          <div className="p-6 flex justify-center items-center flex-col gap-2">
+            <h2 className="text-xl font-bold">
+            Develop Healthy Habits
+            </h2>
+            <Image className="w-1/2" src={healthy} alt="food icon"></Image>
           </div>
         </TiltCard>
         <TiltCard>

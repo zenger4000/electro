@@ -33,7 +33,14 @@ export async function POST(request) {
 
     const data = await response.json();
 
-    return NextResponse.json(data);
+    return NextResponse.json({
+      foods: data.foods ?? [],
+      pagination: {
+        currentPage: data.currentPage,
+        totalPages: data.totalPages,
+        totalHits: data.totalHits,
+      },
+    });
   } catch (error) {
     return NextResponse.json(
       { error: "Something went wrong." },

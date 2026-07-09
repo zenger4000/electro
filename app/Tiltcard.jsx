@@ -83,7 +83,7 @@ export default function TiltCard({ children }) {
   };
 
   return (
-    <div className="[perspective:800px] md:w-[calc(50%-1rem)] flex justify-center">
+    <div className="[perspective:800px]  flex justify-center">
       <div
         ref={cardRef}
         onMouseMove={handleMove}

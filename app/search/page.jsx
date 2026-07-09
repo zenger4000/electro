@@ -47,8 +47,8 @@ export default function SearchPage() {
         throw new Error(data.error || "Search failed.");
       }
 
-
       setFoods(data.foods || []);
+      
     } catch (err) {
       console.error(err);
       setErr(err)
@@ -60,7 +60,7 @@ export default function SearchPage() {
 
   return (
     <div className="pt-20">
-    <main className=" mx-auto md:p-24 p-8 min-h-[90vh] text-white bg-zinc-950 transition-all">
+    <main className=" mx-auto w-11/12 border border-white rounded-3xl mb-12 md:p-24 p-8 min-h-[80vh] text-white bg-zinc-950 transition-all">
 
       <h1 className=" text-2xl md:text-4xl font-bold mb-8">
         Search Foods
@@ -71,7 +71,7 @@ export default function SearchPage() {
         className="flex gap-3 mb-8"
       >
         <input
-          className="flex-1 rounded-lg border-2 p-3  focus:border-[#25aaaa] focus:outline-none"
+          className="flex-1 rounded-lg border-2 p-3 text-black focus:border-[#25aaaa] focus:outline-none"
           placeholder="Search foods..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -94,14 +94,14 @@ export default function SearchPage() {
 
           <div
             key={food.fdcId}
-            className="rounded-lg border p-4 hover:bg-[#25aaaa] transition"
+            className="rounded-lg border border-white hover:border-[#25aaaa] p-4 hover:bg-white hover:text-black transition"
           >
             <h2 className="font-semibold">
               {food.description}
             </h2>
 
             <p className="text-sm text-gray-500">
-              {food.dataType}
+              {food.dataType}{food.dataType==="Branded" && `: ${food.brandName ?? food.brandOwner}`}
             </p>
           </div>
 

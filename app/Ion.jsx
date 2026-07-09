@@ -2,10 +2,10 @@
 
 export default function IonAnimation() {
   return (
-    <div className="rounded-2xl relative w-1/2 md:w-1/2 min-h-[100px] bg-black flex items-center justify-center">
+    <div className="rounded-2xl relative w-1/2 md:w-1/2 min-h-[100px] bg-zinc-950 flex items-center justify-center">
       
       {/* Background Label */}
-      <span className="text-slate-700 font-mono text-sm uppercase tracking-widest pointer-events-none select-none">
+      <span className="text-teal-100 font-mono text-sm uppercase tracking-widest pointer-events-none select-none">
         Ion Chamber
       </span>
 
