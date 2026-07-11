@@ -1,12 +1,24 @@
 import { NextResponse } from "next/server";
 
 export async function GET(request) {
-  const dataTypes = ["Foundation", "Branded"];
-  try {
-    
+  try { 
     const { searchParams } = new URL(request.url);
     const query = searchParams.get("q");
     const page = Number(searchParams.get("page") ?? 1);
+    const type = searchParams.get("type") ?? "both";
+    let dataTypes;
+    switch (type) {
+      case "branded":
+        dataTypes = ["Branded"];
+        break;
+
+      case "non-branded":
+        dataTypes = ["Foundation"];
+        break;
+
+      default:
+        dataTypes = ["Foundation", "Branded"];
+    }
 
     if (!query) {
       return NextResponse.json(

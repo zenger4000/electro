@@ -7,11 +7,12 @@ export default function SearchPage() {
 
   const searchParams = useSearchParams();
   const urlQuery = searchParams.get("q") ?? "";
+  const urlType =searchParams.get("type") ?? "both";
   const [query, setQuery] = useState((urlQuery));
   const [foods, setFoods] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [err, setErr] = useState(null)
-  const router = useRouter()
+  const [err, setErr] = useState(null);
+  const router = useRouter();
   const [pagination, setPagination] = useState({
     currentPage: 1,
     totalPages: 0,
@@ -35,14 +36,14 @@ export default function SearchPage() {
 
   useEffect(()=> {
   handleSearch(urlQuery);
-  setQuery(urlQuery)
-  },[urlQuery , urlPage])
+  setQuery(urlQuery);
+  },[urlQuery , urlPage , urlType])
 
   function handleClick(e) {
     e.preventDefault()
     const trimmedQuery = query.trim()
     if (!trimmedQuery) return;
-    router.push(`/search?q=${encodeURIComponent(trimmedQuery)}`);
+    router.push(`/search?q=${encodeURIComponent(trimmedQuery)}&page=1&type=${urlType}`);
   }
 
   async function handleSearch(searchQuery) {
@@ -52,7 +53,7 @@ export default function SearchPage() {
 
     try {
       const response = await fetch(
-        `/api/search?q=${encodeURIComponent(searchQuery)}&page=${urlPage}`
+        `/api/search?q=${encodeURIComponent(searchQuery)}&page=${urlPage}&type=${urlType}`
       );
 
       const data = await response.json();
@@ -75,7 +76,7 @@ export default function SearchPage() {
 
   return (
     <div className="pt-20">
-    <main className=" mx-auto w-11/12 border border-white rounded-3xl mb-12 md:p-24 p-8 min-h-[80vh] text-white bg-zinc-950 transition-all">
+    <main className=" mx-auto w-11/12 border border-white rounded-3xl mb-12 md:p-24 p-8 min-h-[80vh] text-white bg-[#254141] transition-all">
 
       <h1 className="inline-block text-2xl md:text-4xl font-bold mb-8">
         Search Foods
@@ -85,7 +86,7 @@ export default function SearchPage() {
 
       <form
         onSubmit={handleClick}
-        className="flex gap-3 mb-8"
+        className="flex flex-wrap justify-center gap-3 mb-8 columns-6"
       >
         <input
           className="flex-1 rounded-lg border-2 p-3 text-black focus:border-[#25aaaa] focus:outline-none"
@@ -99,6 +100,35 @@ export default function SearchPage() {
         >
           Search
         </button>
+        {/* food type selection */}
+        <div className="inline-flex overflow-hidden rounded-xl bg-white ">
+          {[
+            { value: "both", label: "Both" },
+            { value: "branded", label: "Branded" },
+            { value: "non-branded", label: "Non-Branded" },
+          ].map((option) => (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() =>
+                router.push(
+                  `/search?q=${encodeURIComponent(urlQuery)}&page=1&type=${option.value}`
+                )
+              }
+              className={`
+          px-4 py-2 text-sm font-medium transition-colors duration-200
+          border-r last:border-r-0 border-gray-300
+          ${
+            urlType === option.value
+              ? "bg-[#25aaaa] text-white"
+              : "bg-white text-gray-700 hover:bg-[#e9f8f8]"
+          }
+        `}
+            >
+              {option.label}
+            </button>
+          ))}
+        </div>
       </form>
 
       {err && <p>{err.message}</p>}
@@ -112,7 +142,7 @@ export default function SearchPage() {
         <button
         disabled={urlPage === 1}
         onClick={() => router.push(
-          `/search?q=${encodeURIComponent(urlQuery)}&page=${urlPage - 1}`)}
+          `/search?q=${encodeURIComponent(urlQuery)}&page=${urlPage - 1}&type=${urlType}`)}
         className="hover:text-[#83cccc]"
       >
         Prev
@@ -120,11 +150,7 @@ export default function SearchPage() {
       {pages.map((pageNumber) => (
         <button
           key={pageNumber}
-          onClick={() =>router.push(
-           (pageNumber === 1)
-          ? `/search?q=${encodeURIComponent(urlQuery)}`
-          : `/search?q=${encodeURIComponent(urlQuery)}&page=${pageNumber}`
-            )}
+          onClick={() =>router.push(`/search?q=${encodeURIComponent(urlQuery)}&page=${pageNumber}&type=${urlType}`)}
           className={`${pagination.currentPage === pageNumber  ? "text-[#25aaaa]" : ""} mx-2 hover:text-[#83cccc]`}
         >
           {pageNumber}
@@ -133,7 +159,7 @@ export default function SearchPage() {
 
       <button
         disabled={urlPage === pagination.totalPages}
-        onClick={() => router.push(`/search?q=${encodeURIComponent(urlQuery)}&page=${urlPage + 1}`)}
+        onClick={() => router.push(`/search?q=${encodeURIComponent(urlQuery)}&page=${urlPage + 1}&type=${urlType}`)}
         className="hover:text-[#83cccc]"
       >
         Next
@@ -149,14 +175,14 @@ export default function SearchPage() {
 
           <div
             key={food.fdcId}
-            className="rounded-lg border border-white hover:border-[#25aaaa] p-4 hover:bg-white hover:text-black transition"
+            className="rounded-lg border border-white hover:border-[#25aaaa] hover:bg-[#e9f8f8] p-4 bg-white text-black transition"
           >
-            <h2 className="font-semibold">
+            <h2 className="font-semibold pb-1">
               {food.description}
             </h2>
 
-            <p className="text-sm text-gray-500">
-              {food.dataType}{food.dataType==="Branded" && `: ${food.brandName ?? food.brandOwner}`}
+            <p className="text-sm ">
+              <span className={`p-1 text-xs text-white ${food.dataType==="Branded"?" bg-[#2d8c7a] rounded-md":"rounded-md bg-[#538513]"}`}>{food.dataType === "Branded"?"Branded":"Non-Branded"}</span>{food.dataType==="Branded" && ` ${food.brandName || food.brandOwner || "Unknown Brand"}`}
             </p>
           </div>
 

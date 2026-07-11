@@ -5,7 +5,7 @@ export default function Footer() {
     return (
       <footer className="border-t border-hidden  bg-zinc-950 text-zinc-400">
         <div className="relative h-2 overflow-hidden">
-          <div className="absolute inset-0 animate-gradient bg-[length:200%_100%] bg-gradient-to-r from-zinc-950 from-10% via-[#25aaaa] via-50% to-zinc-950 to-90%" />
+          <div className="absolute inset-0 animate-gradient bg-[length:200%_100%] bg-gradient-to-r from-zinc-950 from-10% via-[#254141] via-50% to-zinc-950 to-90%" />
         </div>
         <div className="mx-auto max-w-7xl px-6 py-12">
           <div className="grid gap-10 grid-cols-3">
@@ -25,7 +25,7 @@ export default function Footer() {
   
             {/* Navigation */}
             <div className="mx-auto">
-              <h4 className="mb-3 font-semibold text-white">
+              <h4 className="mb-3 font-semibold text-[#3b6b6b]">
                 Explore
               </h4>
   
@@ -70,7 +70,7 @@ export default function Footer() {
   
             {/* Disclaimer */}
             <div className="col-span-2 md:col-span-1">
-              <h4 className="mb-3 font-semibold text-white">
+              <h4 className="mb-3 font-semibold text-[#3b6b6b]">
                 Medical Disclaimer
               </h4>
   
