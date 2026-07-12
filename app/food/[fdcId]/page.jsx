@@ -1,0 +1,39 @@
+export default async function FoodDetails({ params }) {
+
+    const fdcId = params.fdcId;
+    const response = await fetch(`https://api.nal.usda.gov/fdc/v1/food/${fdcId}?api_key=${process.env.FDC_API_KEY}` ,{
+        next : {
+            revalidate : 86400
+        }})
+    
+    
+        if (!response.ok) {
+            switch (response.status) {
+                case 404:
+                    throw new Error("Food not found.");
+        
+                case 429:
+                    throw new Error("Too many requests. Please try again later.");
+        
+                case 500:
+                    throw new Error("USDA server error.");
+        
+                default:
+                    throw new Error("Failed to fetch food.");
+            }
+        }
+        
+    const food = await response.json();
+    return ( 
+        <div className="min-h-screen p-16">
+            {fdcId}
+            {food.description}
+            {food.foodNutrients.map((nutr)=>
+                <div key={nutr.nutrient.id}>
+                <p>{nutr.nutrient.name}</p>
+                <p>{nutr.amount} {nutr.nutrient.unitName}</p>
+                </div>
+            )}
+        </div>
+     );
+}

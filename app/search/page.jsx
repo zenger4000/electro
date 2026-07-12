@@ -2,6 +2,7 @@
 
 import { useState , useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Pagination from "../Pagination";
 
 export default function SearchPage() {
 
@@ -135,38 +136,8 @@ export default function SearchPage() {
       {foods?.length === 0 && <p>No foods found.</p>}
 
       {/* pagination */}
-      {!!pagination.totalHits && <div className="flex justify-center items-center flex-col"><p className="mb-8">
-        {pagination.totalHits} results • Page {urlPage} of{" "}{pagination.totalPages}
-      </p>
-        <div className="mb-3 ">
-        <button
-        disabled={urlPage === 1}
-        onClick={() => router.push(
-          `/search?q=${encodeURIComponent(urlQuery)}&page=${urlPage - 1}&type=${urlType}`)}
-        className="hover:text-[#83cccc]"
-      >
-        Prev
-      </button>
-      {pages.map((pageNumber) => (
-        <button
-          key={pageNumber}
-          onClick={() =>router.push(`/search?q=${encodeURIComponent(urlQuery)}&page=${pageNumber}&type=${urlType}`)}
-          className={`${pagination.currentPage === pageNumber  ? "text-[#25aaaa]" : ""} mx-2 hover:text-[#83cccc]`}
-        >
-          {pageNumber}
-        </button>
-      ))}
+      <Pagination pagination={ pagination } />
 
-      <button
-        disabled={urlPage === pagination.totalPages}
-        onClick={() => router.push(`/search?q=${encodeURIComponent(urlQuery)}&page=${urlPage + 1}&type=${urlType}`)}
-        className="hover:text-[#83cccc]"
-      >
-        Next
-      </button>
-        </div>
-      </div>
-      }
 
       {/* Food Results */}
       <div className="space-y-3">
@@ -178,7 +149,7 @@ export default function SearchPage() {
             className="rounded-lg border border-white hover:border-[#25aaaa] hover:bg-[#e9f8f8] p-4 bg-white text-black transition"
           >
             <h2 className="font-semibold pb-1">
-              {food.description}
+              {food.description} {food.fdcId}
             </h2>
 
             <p className="text-sm ">
@@ -189,6 +160,7 @@ export default function SearchPage() {
         ))}
 
       </div>
+      <Pagination pagination={pagination} />
     </main>
     </div>
   );
