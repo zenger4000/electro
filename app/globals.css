@@ -114,3 +114,20 @@ nav.hide {
 .search {
   animation: fade 1s linear forwards;
 }
+
+.star-energy{
+  stroke-dasharray:200 100;
+  animation:starFlow 2s linear infinite;
+}
+
+@keyframes starFlow{
+
+  from{
+      stroke-dashoffset:300;
+  }
+
+  to{
+      stroke-dashoffset:0;
+  }
+
+}

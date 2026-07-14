@@ -24,7 +24,7 @@ const Pagination = ({ pagination }) => {
   
     return ( 
         <div>
-             {!!pagination.totalHits && <div className="flex justify-center items-center flex-col"><p className="mb-8">
+             {!!pagination.totalHits && <div className="flex justify-center items-center flex-col"><p className="my-6">
         {pagination.totalHits} results • Page {urlPage} of{" "}{pagination.totalPages}
       </p>
         <div className="mb-3 ">

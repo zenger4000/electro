@@ -9,11 +9,11 @@ export async function GET(request) {
     let dataTypes;
     switch (type) {
       case "branded":
-        dataTypes = ["Branded"];
+        dataTypes = ["Foundation"];
         break;
 
       case "non-branded":
-        dataTypes = ["Foundation"];
+        dataTypes = ["SR Legacy"];
         break;
 
       default:

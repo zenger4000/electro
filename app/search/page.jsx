@@ -149,8 +149,12 @@ export default function SearchPage() {
             className="rounded-lg border border-white hover:border-[#25aaaa] hover:bg-[#e9f8f8] p-4 bg-white text-black transition"
           >
             <h2 className="font-semibold pb-1">
-              {food.description} {food.fdcId}
+              {food.description} - {food.fdcId}
             </h2>
+
+            <p>   
+              {food.foodNutrients.map((n)=> n.nutrientName )}
+           </p>
 
             <p className="text-sm ">
               <span className={`p-1 text-xs text-white ${food.dataType==="Branded"?" bg-[#2d8c7a] rounded-md":"rounded-md bg-[#538513]"}`}>{food.dataType === "Branded"?"Branded":"Non-Branded"}</span>{food.dataType==="Branded" && ` ${food.brandName || food.brandOwner || "Unknown Brand"}`}

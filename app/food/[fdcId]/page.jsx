@@ -1,3 +1,10 @@
+import ElectrolyteGrid from "@/app/components/food/ElectrolyteGrid";
+import FoodHero from "@/app/components/food/FoodHero";
+import MacroGrid from "@/app/components/food/MacroGrid";
+import MineralGrid from "@/app/components/food/MineralGrid";
+import QuickStats from "@/app/components/food/QuickStats";
+import VitaminGrid from "@/app/components/food/VitaminGrid";
+
 export default async function FoodDetails({ params }) {
 
     const fdcId = params.fdcId;
@@ -26,14 +33,20 @@ export default async function FoodDetails({ params }) {
     const food = await response.json();
     return ( 
         <div className="min-h-screen p-16">
-            {fdcId}
+            {/* {fdcId}
             {food.description}
             {food.foodNutrients.map((nutr)=>
                 <div key={nutr.nutrient.id}>
                 <p>{nutr.nutrient.name}</p>
                 <p>{nutr.amount} {nutr.nutrient.unitName}</p>
                 </div>
-            )}
+            )} */}
+            <FoodHero food={food}/>
+            <QuickStats  food={food}/>
+            <ElectrolyteGrid  food={food}/>
+            <MacroGrid  food={food}/>
+            <VitaminGrid  food={food}/>
+            <MineralGrid  food={food}/>
         </div>
      );
 }
