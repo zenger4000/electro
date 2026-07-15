@@ -116,11 +116,11 @@ nav.hide {
 }
 
 .star-energy{
-  stroke-dasharray:200 100;
-  animation:starFlow 2s linear infinite;
+  stroke-dasharray:300 0;
+  /* animation:starFlow 7s linear infinite; */
 }
 
-@keyframes starFlow{
+/* @keyframes starFlow{
 
   from{
       stroke-dashoffset:300;
@@ -130,4 +130,17 @@ nav.hide {
       stroke-dashoffset:0;
   }
 
+} */
+
+.spin-ccw {
+  animation: spin-reverse 10s linear infinite; 
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }

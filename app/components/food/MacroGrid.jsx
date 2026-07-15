@@ -38,7 +38,7 @@ const MacroGrid = ({ food }) => {
 
     return (
 
-        <section className="space-y-6">
+        <section className="space-y-6 mb-6">
 
             <div>
 
@@ -58,7 +58,7 @@ const MacroGrid = ({ food }) => {
 
                     const value = macro.getter(food);
 
-                    if (value === null) return null;
+                    // if (value === null) return null;
 
                     return (
 
@@ -78,11 +78,11 @@ const MacroGrid = ({ food }) => {
                                 <div className="mt-4 flex items-end gap-2">
 
                                     <span className="text-5xl font-bold text-slate-900">
-                                        {value}
+                                        {value??"No Data"}
                                     </span>
 
                                     <span className="pb-2 text-lg text-slate-500">
-                                        {macro.unit}
+                                        {value && macro.unit}
                                     </span>
 
                                 </div>

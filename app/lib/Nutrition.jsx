@@ -13,7 +13,6 @@ export function getAmount(food, nutrientName) {
     const nutrient = getNutrient(food, nutrientName);
     
     if (nutrient?.amount == null) return null;
-    // return nutrient?.amount ?? null;
     return Math.round(nutrient.amount * 100) / 100;
 }
 
@@ -23,13 +22,6 @@ export function getUnit(food, nutrientName) {
     return nutrient?.nutrient?.unitName ?? "";
 }
 
-// export function getValue(food, nutrientName, decimals = 1) {
-//     const amount = getAmount(food, nutrientName);
-
-//     if (amount === null) return null;
-
-//     return `${amount.toFixed(decimals)} ${getUnit(food, nutrientName)}`;
-// }
 
 // ==========================
 // Quick Stats
@@ -119,3 +111,27 @@ export function getMinerals(food) {
         .filter(item => item.amount !== null);
 
 }
+
+export function hasFullElectrolyteProfile(food) {
+    return [
+        "Potassium, K",
+        "Sodium, Na",
+        "Calcium, Ca",
+        "Magnesium, Mg",
+    ].every(nutrient => getSearchNutrient(food, nutrient));
+}
+
+export function getSearchNutrient(food, nutrientName) {
+    return food.foodNutrients?.find(
+        nutrient =>
+            nutrient.nutrientName?.toLowerCase() === nutrientName.toLowerCase()
+    );
+}
+
+export function getSearchAmount(food, nutrientName) {
+    return food.foodNutrients?.find(
+        nutrient =>
+            nutrient.nutrientName?.toLowerCase() === nutrientName.toLowerCase()
+    )?.value ?? null
+}
+

@@ -1,6 +1,6 @@
 import { getElectrolytes } from "@/app/lib/Nutrition";
 
-const DAILY_VALUES = {
+export const DAILY_VALUES = {
     Potassium: 4700,
     Sodium: 2300,
     Calcium: 1300,
@@ -9,7 +9,13 @@ const DAILY_VALUES = {
     Phosphorus: 1250,
 };
 
-function getRating(percentage) {
+export function getRating(percentage) {
+    if (percentage > 100) {
+        return {
+            label: "Excessive",
+            color: "bg-red-500",
+        };
+    }
     if (percentage >= 20) {
         return {
             label: "Excellent",
@@ -40,13 +46,10 @@ function getRating(percentage) {
 const ElectrolyteGrid = ({ food }) => {
 
     const electrolytes = getElectrolytes(food);
-    // console.log(
-    //     food.foodNutrients.map(n => n.nutrient?.name)
-    //   );
 
     return (
 
-        <section className="space-y-6">
+        <section className="space-y-6 mb-6">
 
             <div>
 

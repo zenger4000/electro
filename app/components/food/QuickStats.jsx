@@ -30,7 +30,7 @@ const stats = [
 
 const QuickStats = ({ food }) => {
     return (
-        <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-4 mb-6">
 
             {stats.map((stat) => (
 

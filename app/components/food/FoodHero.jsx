@@ -2,7 +2,7 @@ import CompleteDataBadge from "../CompleteDataBadge";
 
 const FoodHero = ({ food }) => {
     return (
-        <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50 p-8 shadow-lg">
+        <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50 p-8 shadow-lg my-6">
 
             {/* Background decoration */}
             <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-sky-200/30 blur-3xl"></div>
@@ -64,6 +64,18 @@ const FoodHero = ({ food }) => {
 
                             <p className="font-semibold text-slate-800">
                                 {food.foodClass}
+                            </p>
+                        </div>
+                    )}
+
+                    {food.servingSize && (
+                        <div className="rounded-xl bg-white px-5 py-3 shadow-sm">
+                            <p className="text-xs uppercase tracking-wider text-slate-500">
+                                Serving Size
+                            </p>
+
+                            <p className="font-semibold text-slate-800">
+                                {food.servingSize} {food.servingSizeUnit}
                             </p>
                         </div>
                     )}

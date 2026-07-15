@@ -1,6 +1,6 @@
 export default function CompleteDataBadge({
   size = 42,
-  className = "",
+  className = "spin-ccw inline-block mx-2",
 }) {
   return (
     <svg
@@ -10,12 +10,12 @@ export default function CompleteDataBadge({
       className={className}
     >
       <defs>
-        <linearGradient
+        {/* <linearGradient
           id="rainbow"
-          x1="0%"
-          y1="0%"
-          x2="100%"
-          y2="100%"
+          x1="100%"
+          y1="100%"
+          x2="0%"
+          y2="0%"
         >
           <stop offset="0%" stopColor="#ff0000" />
           <stop offset="16%" stopColor="#ff8000" />
@@ -24,6 +24,18 @@ export default function CompleteDataBadge({
           <stop offset="66%" stopColor="#00ffff" />
           <stop offset="83%" stopColor="#0000ff" />
           <stop offset="100%" stopColor="#ff00ff" />
+        </linearGradient> */}
+        <linearGradient
+          id="rainbow"
+          x1="78%"
+          y1="24%"
+          x2="35%"
+          y2="90%"
+        >
+          <stop offset="0%" stopColor="#6ae75e" />
+          <stop offset="33%" stopColor="#9d51cd" />
+          <stop offset="66%" stopColor="#f2dad7" />
+          <stop offset="100%" stopColor="#e22c37" />
         </linearGradient>
 
         <filter id="glow">
@@ -38,25 +50,34 @@ export default function CompleteDataBadge({
 
       {/* Gold Star */}
 
-      <path
-        d="
-        M50 7
-        L61 35
-        L91 35
-        L67 53
-        L76 84
-        L50 66
-        L24 84
-        L33 53
-        L9 35
-        L39 35
-        Z
-      "
-        fill="#f8eb27"
-        // fill="#FFD54A"
-        stroke="#fff5"
-        strokeWidth="1.5"
-      />
+      <svg viewBox="0 0 100 100" xmlns="http://w3.org">
+  <defs>
+  
+    <linearGradient id="starGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="100%" stopColor="#ffffff" />
+    </linearGradient>
+  </defs>
+
+  <path
+    d="
+      M50 7
+      L61 35
+      L91 35
+      L67 53
+      L76 84
+      L50 66
+      L24 84
+      L33 53
+      L9 35
+      L39 35
+      Z
+    "
+    fill="url(#starGradient)"
+    stroke="#fff5"
+    strokeWidth="1.5"
+  />
+</svg>
+
 
       {/* Thin white outline */}
 

@@ -3,8 +3,8 @@ export default function Page() {
     const cards = [
       {
         title: "Sodium",
-        color: "rgba(59,130,246,.45)",
-        hoverColor: "rgba(59,130,246,.18)",
+        color: "rgba(157, 81, 205,.40)",
+        hoverColor: "rgba(157, 81, 205,.18)",
         icon: "Na",
         ion: "+",
         transform: "  scale(.88)",
@@ -12,8 +12,8 @@ export default function Page() {
       },
       {
         title: "Potassium",
-        color: "rgba(249,115,22,.40)",
-        hoverColor: "rgba(249,115,22,.18)",
+        color: "rgba(226, 44, 55,.40)",
+        hoverColor: "rgba(226, 44, 55,.18)",
         icon: "K",
         ion: "+",
         transform: "  scale(.88)",
@@ -21,8 +21,8 @@ export default function Page() {
       },
       {
         title: "Magnesium",
-        color: "rgba(168,85,247,.40)",
-        hoverColor: "rgba(168,85,247,.18)",
+        color: "rgba(106, 231, 94,.40)",
+        hoverColor: "rgba(106, 231, 94,.18)",
         icon: "Mg",
         ion: "2+",
         transform: "  scale(.88)",
@@ -30,8 +30,8 @@ export default function Page() {
       },
       {
         title: "Calcium",
-        color: "rgba(16,185,129,.40)",
-        hoverColor: "rgba(16,185,129,.18)",
+        color: "rgba(242, 218, 215,.45)",
+        hoverColor: "rgba(242, 218, 215,.18)",
         icon: "Ca",
         ion: "2+",
         transform: " scale(.88)",
