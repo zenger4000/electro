@@ -30,8 +30,8 @@ export default function Page() {
       },
       {
         title: "Calcium",
-        color: "rgba(242, 218, 215,.45)",
-        hoverColor: "rgba(242, 218, 215,.18)",
+        color: "rgba(230, 202, 198,.45)",
+        hoverColor: "rgba(230, 202, 198,.18)",
         icon: "Ca",
         ion: "2+",
         transform: " scale(.88)",

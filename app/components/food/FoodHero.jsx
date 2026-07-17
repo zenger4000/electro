@@ -1,21 +1,21 @@
 import CompleteDataBadge from "../CompleteDataBadge";
+import Image from "next/image";
 
 const FoodHero = ({ food }) => {
     return (
-        <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50 p-8 shadow-lg my-6">
+        <section className=" relative overflow-hidden rounded-3xl border border-slate-200 p-8 shadow-lg mt-6 mb-8">
 
             {/* Background decoration */}
-            <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-sky-200/30 blur-3xl"></div>
-            <div className="absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-cyan-200/30 blur-3xl"></div>
+            {/* <div className="absolute bg-[url('../public/foodhero.png')] left-0 top-0 h-full w-full"></div> */}
+            <Image src={'/../public/foodhero.png'} fill  className="object-cover absolute top-0 left-0" />
+            <div className="bg-gradient-to-l from-transparent via-50% via-white to-white absolute left-0 top-0 h-full w-full bg-white/80 "></div>
 
             <div className="relative">
-                <CompleteDataBadge size={32} />
-
                 {/* Food type badge */}
                 <span className="inline-flex rounded-full bg-sky-100 px-4 py-1 text-sm font-semibold tracking-wide text-sky-700">
                     {food.dataType}
                 </span>
-
+                
                 {/* Food title */}
                 <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
                     {food.description}
@@ -34,7 +34,7 @@ const FoodHero = ({ food }) => {
                 {/* Metadata */}
                 <div className="mt-8 flex flex-wrap gap-3">
 
-                    <div className="rounded-xl bg-white px-5 py-3 shadow-sm">
+                    <div className="rounded-xl bg-sky-50  px-5 py-3 shadow-lg ">
                         <p className="text-xs uppercase tracking-wider text-slate-500">
                             FDC ID
                         </p>
@@ -45,7 +45,7 @@ const FoodHero = ({ food }) => {
                     </div>
 
                     {food.publicationDate && (
-                        <div className="rounded-xl bg-white px-5 py-3 shadow-sm">
+                        <div className="rounded-xl bg-sky-50 px-5 py-3 shadow-lg ">
                             <p className="text-xs uppercase tracking-wider text-slate-500">
                                 Published
                             </p>
@@ -57,7 +57,7 @@ const FoodHero = ({ food }) => {
                     )}
 
                     {food.foodClass && (
-                        <div className="rounded-xl bg-white px-5 py-3 shadow-sm">
+                        <div className="rounded-xl bg-sky-50  px-5 py-3 shadow-lg ">
                             <p className="text-xs uppercase tracking-wider text-slate-500">
                                 Food Class
                             </p>
@@ -69,7 +69,7 @@ const FoodHero = ({ food }) => {
                     )}
 
                     {food.servingSize && (
-                        <div className="rounded-xl bg-white px-5 py-3 shadow-sm">
+                        <div className="rounded-xl bg-sky-50 px-5 py-3 shadow-lg ">
                             <p className="text-xs uppercase tracking-wider text-slate-500">
                                 Serving Size
                             </p>

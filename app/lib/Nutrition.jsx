@@ -39,6 +39,9 @@ export const getFat = food =>
 export const getCarbs = food =>
     getAmount(food, "Carbohydrate, by difference");
 
+export const getSugars = food =>
+    getAmount(food, "Total Sugars");
+
 // ==========================
 // Electrolytes
 // ==========================

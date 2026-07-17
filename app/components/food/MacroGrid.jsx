@@ -38,7 +38,7 @@ const MacroGrid = ({ food }) => {
 
     return (
 
-        <section className="space-y-6 mb-6">
+        <section className="space-y-6 mb-8">
 
             <div>
 
@@ -82,7 +82,7 @@ const MacroGrid = ({ food }) => {
                                     </span>
 
                                     <span className="pb-2 text-lg text-slate-500">
-                                        {value && macro.unit}
+                                        {value!=null && macro.unit}
                                     </span>
 
                                 </div>

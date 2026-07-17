@@ -9,13 +9,14 @@ import ElectroExcellence from "../components/ElectroExcellence";
 import { DAILY_VALUES } from "../components/food/ElectrolyteGrid";
 import { getRating } from "../components/food/ElectrolyteGrid";
 import { getSearchAmount } from "../lib/Nutrition";
+import Link from "next/link";
 
 
 export default function SearchPage() {
 
   const searchParams = useSearchParams();
   const urlQuery = searchParams.get("q") ?? "";
-  const urlType =searchParams.get("type") ?? "both";
+  const urlType =searchParams.get("type") ?? "all";
   const [query, setQuery] = useState((urlQuery));
   const [foods, setFoods] = useState(null);
   const sortedFoods = foods ? [...foods].sort((a, b) => {
@@ -134,7 +135,7 @@ export default function SearchPage() {
                 )
               }
               className={`
-                px-2 py-2 text-xs font-semibold transition-colors duration-200
+                px-2 py-2 text-xs font-medium transition-colors duration-200
                 border-r last:border-r-0 border-gray-300
                 ${
                   urlType === option.value
@@ -161,7 +162,7 @@ export default function SearchPage() {
         
         
         {sortedFoods && sortedFoods.map((food) => {
-            const ratings = {};
+          const ratings = {};
             //Rating setup
             [
               "Potassium, K",
@@ -174,15 +175,21 @@ export default function SearchPage() {
             ratings[electrolyte] = getRating(percentage);
           })
 
-           return <div
-            key={food.fdcId}
-            className="rounded-lg relative border hover:scale-[1.02] p-8 bg-white text-black transition"
+          
+          return <Link
+             key={food.fdcId}
+             href={`/food/${food.fdcId}`}
+             className="block"
+             target="_blank"
+          >
+           <div
+           className="rounded-lg relative border hover:scale-[1.02] p-8 bg-white text-black transition"
           >
             <div className="flex flex-row justify-between">
               <div className="-mt-6 mb-6 -ml-6 text-[#25aaaa] text-xs">
                 {hasFullElectrolyteProfile(food) && <><CompleteDataBadge  size={28}/> Full Electrolyte Profile </> }
               </div>
-              <div>
+              <div className="absolute -top-1 right-2 flex gap-1 overflow-visible">
               {ratings["Potassium, K"]?.label === "Excellent" &&
               <ElectroExcellence ele="K" />}
 
@@ -209,20 +216,22 @@ export default function SearchPage() {
 
             <p className="text-sm ">
               <span className={`p-1 text-xs text-white rounded-md
-                ${food.dataType==="Branded"?"bg-[#2f3bec]":
-                food.dataType==="Foundation"?" bg-[#a4bce2]":
-                food.dataType==="SR Legacy"? "bg-[#6bdb60]":
-                food.dataType==="Survey (FNDDS)"? "bg-[#b0fcce]":""
+                ${food.dataType==="Branded"?"bg-[#484c81]":
+                food.dataType==="Foundation"?" bg-[#66bd63]":
+                food.dataType==="SR Legacy"? "bg-[#e7d25d]":
+                food.dataType==="Survey (FNDDS)"? "bg-[#ef5678]":""
                 }`}>
-                {food.dataType}
+                {food.dataType ==="Foundation"?"Non Branded":food.dataType}
               </span>
               {food.dataType==="Branded" && ` ${food.brandName || food.brandOwner || "Unknown Brand"}`}
             </p>
           </div>
+          </Link>
 
 })}
 
       </div>
+      
       <Pagination pagination={pagination} />
     </main>
     </div>

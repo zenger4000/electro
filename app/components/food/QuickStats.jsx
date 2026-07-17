@@ -3,6 +3,7 @@ import {
     getProtein,
     getCarbs,
     getFat,
+    getSugars
 } from "@/app/lib/Nutrition";
 
 const stats = [
@@ -10,27 +11,37 @@ const stats = [
         title: "Calories",
         color: "bg-amber-500",
         getter: getCalories,
-    },
-    {
-        title: "Protein",
-        color: "bg-blue-500",
-        getter: getProtein,
+        unit: "kcal",
     },
     {
         title: "Carbohydrates",
         color: "bg-emerald-500",
         getter: getCarbs,
+        unit: "g",
+    },
+    {
+        title: "Sugars",
+        color: "bg-emerald-200",
+        getter: getSugars,
+        unit: "g",
     },
     {
         title: "Fat",
         color: "bg-rose-500",
         getter: getFat,
+        unit: "g",
+    },
+    {
+        title: "Protein",
+        color: "bg-blue-500",
+        getter: getProtein,
+        unit: "g",
     },
 ];
 
 const QuickStats = ({ food }) => {
     return (
-        <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-4 mb-6">
+        <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-5 mb-8">
 
             {stats.map((stat) => (
 
@@ -48,7 +59,7 @@ const QuickStats = ({ food }) => {
                         </p>
 
                         <h2 className="mt-3 text-3xl font-bold text-slate-900">
-                            {stat.getter(food) ?? "--"}
+                            {stat.getter(food) ?? "No Data"} <span className="text-slate-500 text-[18px]">{stat.getter(food)!= null && stat.unit}</span> 
                         </h2>
 
                     </div>

@@ -34,7 +34,7 @@ export default function CompleteDataBadge({
         >
           <stop offset="0%" stopColor="#6ae75e" />
           <stop offset="33%" stopColor="#9d51cd" />
-          <stop offset="66%" stopColor="#f2dad7" />
+          <stop offset="66%" stopColor="#e6cac6" />
           <stop offset="100%" stopColor="#e22c37" />
         </linearGradient>
 
