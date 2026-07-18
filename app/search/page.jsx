@@ -10,6 +10,7 @@ import { DAILY_VALUES } from "../components/food/ElectrolyteGrid";
 import { getRating } from "../components/food/ElectrolyteGrid";
 import { getSearchAmount } from "../lib/Nutrition";
 import Link from "next/link";
+import SearchLegend from "./SearchLegend";
 
 
 export default function SearchPage() {
@@ -149,7 +150,7 @@ export default function SearchPage() {
           ))}
         </div>
       </form>
-
+      <SearchLegend />
       {err && <p>{err.message}</p>}
       {foods?.length === 0 && <p>No foods found.</p>}
 

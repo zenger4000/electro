@@ -7,7 +7,7 @@ const Pagination = ({ pagination }) => {
     const searchParams = useSearchParams();
     const urlQuery = searchParams.get("q") ?? "";
     const urlPage = Number(searchParams.get("page") ?? 1);
-    const urlType = searchParams.get("type") ?? "both";
+    const urlType = searchParams.get("type") ?? "all";
 
     const maxButtons = 5;
     let startPage = Math.max(1, urlPage - Math.floor(maxButtons / 2));
