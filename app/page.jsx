@@ -32,7 +32,7 @@ export default function Home() {
         <TiltCard>
           <div className="p-6 flex justify-center items-center flex-col gap-2">
             <h2 className="text-xl font-bold">
-            7 Essential Electrolytes
+            5 Essential Electrolytes
             </h2>
             <Image className="w-1/2" src={mineral} alt="food icon"></Image>
           </div>

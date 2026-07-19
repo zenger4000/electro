@@ -53,7 +53,6 @@ export function getElectrolytes(food) {
         ["Sodium", "Sodium, Na"],
         ["Calcium", "Calcium, Ca"],
         ["Magnesium", "Magnesium, Mg"],
-        ["Chloride", "Chloride, Cl"],
         ["Phosphorus", "Phosphorus, P"],
     ]
         .map(([name, nutrientName]) => ({

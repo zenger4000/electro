@@ -156,7 +156,7 @@ export default function SearchLegend() {
                 </h4>
 
                 <p className="text-slate-600 leading-relaxed mt-1">
-                Foods marked with the ⭐ contain values for all four major electrolytes—Potassium, Sodium, Magnesium, and Calcium. Electrolyfe prioritizes these foods by displaying them first in the search results, making it easier to compare foods with the most complete electrolyte information.
+                Foods marked with this star contain values for all four major electrolytes—Potassium, Sodium, Magnesium, and Calcium. Electrolyfe prioritizes these foods by displaying them first in the search results, making it easier to compare foods with the most complete electrolyte information.
                 </p>
 
               </div>

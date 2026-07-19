@@ -5,7 +5,6 @@ export const DAILY_VALUES = {
     Sodium: 2300,
     Calcium: 1300,
     Magnesium: 420,
-    Chloride: 2300,
     Phosphorus: 1250,
 };
 
