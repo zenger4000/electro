@@ -2,6 +2,7 @@ const hero = {
     name: "Calcium",
     symbol: "Ca",
     color: "#e6cac6",
+    url: "/../public/calcium.png",
 
     description:
         "An essential mineral and electrolyte best known for building and maintaining strong bones and teeth. Calcium also supports muscle contraction, nerve signaling, blood clotting, and normal heart function.¹²",
