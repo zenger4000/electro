@@ -2,6 +2,7 @@ const hero = {
     name: "Magnesium",
     symbol: "Mg",
     color: "#6ae75e",
+    url: "/../public/magnesium.png",
 
     description:
         "An essential mineral and electrolyte involved in more than 300 enzymatic reactions throughout the body. Magnesium supports muscle and nerve function, energy production, bone health, protein synthesis, and normal heart rhythm.¹²",

@@ -2,6 +2,7 @@ const hero = {
     name: "Potassium",
     symbol: "K",
     color: "#e22c37",
+    url: "/../public/potassium.png",
 
     description:
         "An essential mineral and electrolyte that helps regulate fluid balance, transmit nerve signals, support muscle contraction, and maintain normal heart function. Nearly all potassium in the body is stored inside cells, where it plays a critical role in countless physiological processes.¹²",

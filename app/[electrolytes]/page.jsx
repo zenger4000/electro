@@ -48,8 +48,8 @@ export default function ElectrolytePage({ params }) {
     }
 
     return (
-        <div className="pt-20">
-            <main className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-10">
+        <div className={`bg-[${data.hero.color}]`}>
+            <main className="flex flex-col gap-8">
 
                 <ElectrolyteHero
                     {...data.hero}

@@ -35,7 +35,7 @@ body {
   font-family: 'Firasans', sans-serif;
 }
 
-.hero::after {
+/* .hero::after {
   content: "";
   position: absolute;
   top: 0;
@@ -43,11 +43,11 @@ body {
   width: 100%;
   height: 100%;
   
-  /* Control your colors and direction here */
+  Control your colors and direction here
   background: linear-gradient(to bottom, rgba(255, 0, 0, 1) 0%, rgba(0, 0, 255, 0.7) 100%);
   
-  pointer-events: none; /* Secret tip: Allows users to right-click/save the image underneath */
-}
+  pointer-events: none; Secret tip: Allows users to right-click/save the image underneath
+} */
 
 .navbar li:hover {
   cursor: pointer;
