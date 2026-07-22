@@ -6,9 +6,9 @@ export default function ExcessIntake({
     recommendation,
 }) {
     return (
-        <section className="overflow-hidden rounded-3xl border border-red-200 bg-white shadow-sm">
+        <section className="overflow-hidden rounded-3xl border border-red-200 bg-white shadow-sm mx-6">
 
-            <div className="border-b border-red-200 bg-red-50 px-8 py-6">
+            <div className="border-b border-red-200 bg-red-100 px-8 py-6">
 
                 <h2 className="text-3xl font-bold text-slate-900">
                     {title}
@@ -64,7 +64,7 @@ export default function ExcessIntake({
 
             </div>
 
-            <div className="border-t border-red-200 bg-red-50 px-8 py-6">
+            <div className="border-t border-red-200 bg-red-100 px-8 py-6">
 
                 <p className="leading-7 text-slate-700">
                     {recommendation}

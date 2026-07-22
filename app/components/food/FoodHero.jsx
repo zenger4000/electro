@@ -6,7 +6,6 @@ const FoodHero = ({ food }) => {
         <section className=" relative overflow-hidden rounded-3xl border border-slate-200 p-8 shadow-lg mt-6 mb-8">
 
             {/* Background decoration */}
-            {/* <div className="absolute bg-[url('../public/foodhero.png')] left-0 top-0 h-full w-full"></div> */}
             <Image src={'/../public/foodhero.png'} fill quality={100}  className="object-cover absolute top-0 left-0" />
             <div className="bg-gradient-to-l from-transparent via-50% via-white to-white absolute left-0 top-0 h-full w-full bg-white/80 "></div>
 

@@ -5,6 +5,7 @@ import { useState } from "react";
 import CompleteDataBadge from "../components/CompleteDataBadge";
 import ElectroExcellence from "../components/ElectroExcellence";
 import info from "/public/info.svg"
+import warning from "/public/warning.svg"
 
 const databases = [
     {
@@ -140,6 +141,22 @@ export default function SearchLegend() {
                   </p>
                 </div>
               ))}
+
+            </div>
+
+            <h3 className="font-semibold text-slate-800 mb-6">
+              Warnings
+            </h3>
+
+            <div className="flex content-between items-center gap-2 mb-12">
+              <div className="min-w-fit">
+              <div className=" m-1 rounded-md p-1  bg-red-500 text-xs"><Image width={24} className={"inline-block"} src={warning} alt="warning" /> Excessive Sodium </div>
+              </div>
+
+              <p className="text-slate-600">
+                    Indicates the food is excessive in
+                    <strong> Sodium</strong>.
+                  </p>
 
             </div>
 

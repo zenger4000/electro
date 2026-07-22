@@ -1,9 +1,10 @@
 export default function ElectrolyteBenefits({
     title,
+    color,
     benefits,
 }) {
     return (
-        <section className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+        <section className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden mx-6">
 
             <div className="border-b border-slate-200 px-8 py-6">
 
@@ -22,8 +23,9 @@ export default function ElectrolyteBenefits({
                 {benefits.map((benefit) => (
 
                     <article
+                        style={{ backgroundColor: `${color}`}}
                         key={benefit.title}
-                        className="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+                        className="rounded-2xl border border-slate-200 p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
                     >
 
                         <h3 className="text-xl font-bold text-slate-900">

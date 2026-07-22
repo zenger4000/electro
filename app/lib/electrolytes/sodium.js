@@ -4,7 +4,6 @@ const hero = {
     color: "#9d51cd",
     url: "/../public/sodium.png",
 
-
     description:
         "An essential mineral and electrolyte that helps regulate fluid balance, supports nerve signaling, enables muscle contraction, and contributes to maintaining normal blood pressure and blood volume.¹²",
 
@@ -15,12 +14,8 @@ const hero = {
 const quickFacts = {
     facts: [
         {
-            title: "Classification",
-            value: "Essential Mineral & Electrolyte",
-        },
-        {
-            title: "Chemical Symbol",
-            value: "Na",
+            title: "Chemical Forms",
+            value: "Na - Na₃C₆H₅O₇ - NaCl",
         },
         {
             title: "Primary Functions",
@@ -57,6 +52,7 @@ const overview = {
 };
 const benefits = {
     title: "Health Benefits",
+    color: "#9d51cd60",
 
     benefits: [
         {
@@ -131,32 +127,38 @@ const foodSources = {
         {
             name: "Table Salt",
             amount: "38,758 mg / 100 g",
-            fdcId: null,
+            fdcId: 173468,
+            img: "/salt.png",
         },
         {
             name: "Soy Sauce",
             amount: "Approx. 5,500–7,000 mg / 100 g",
-            fdcId: null,
+            fdcId: 2710246,
+            img: "/soy.png",
         },
         {
             name: "Parmesan Cheese",
-            amount: "Approx. 1,500 mg / 100 g",
-            fdcId: null,
+            amount: "Approx. 1,800 mg / 100 g",
+            fdcId: 171247,
+            img: "/cheese.png",
         },
         {
-            name: "Ham",
-            amount: "Approx. 1,200 mg / 100 g",
-            fdcId: null,
+            name: "Pickled Olives",
+            amount: "Approx. 1,500 mg / 100 g",
+            fdcId: 169096,
+            img: "/olives.png",
         },
         {
             name: "Bread",
             amount: "Varies by product",
-            fdcId: null,
+            fdcId: 172686,
+            img: "/bread.png",
         },
         {
             name: "Canned Soups",
             amount: "Often High",
-            fdcId: null,
+            fdcId: 172881,
+            img: "/soup.png",
         },
     ],
 };

@@ -4,7 +4,7 @@ export default function ScientificReferences({
     references,
 }) {
     return (
-        <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm mb-6 mx-6">
 
             <div className="border-b border-slate-200 px-8 py-6">
 

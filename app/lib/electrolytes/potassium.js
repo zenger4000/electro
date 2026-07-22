@@ -14,12 +14,8 @@ const hero = {
 const quickFacts = {
     facts: [
         {
-            title: "Classification",
-            value: "Essential Mineral & Electrolyte",
-        },
-        {
-            title: "Chemical Symbol",
-            value: "K",
+            title: "Chemical Forms",
+            value: "K - K₃C₆H₅O₇ - KCl",
         },
         {
             title: "Primary Functions",
@@ -57,6 +53,7 @@ const overview = {
 
 const benefits = {
     title: "Health Benefits",
+    color: "#e22c3760" ,
 
     benefits: [
         {
@@ -130,33 +127,34 @@ const foodSources = {
     foods: [
         {
             name: "Potato, flesh and skin, raw",
-            amount: "421 mg / 100 g",
-            fdcId: null,
+            amount: "425 mg / 100 g",
+            fdcId: 170026,
+            img: "/../public/potassium.png",
         },
         {
             name: "Spinach, raw",
             amount: "558 mg / 100 g",
-            fdcId: null,
+            fdcId: 168462,
         },
         {
             name: "White Beans, mature seeds, raw",
             amount: "561 mg / 100 g",
-            fdcId: null,
+            fdcId: 175202,
         },
         {
             name: "Banana, raw",
             amount: "358 mg / 100 g",
-            fdcId: null,
+            fdcId: 173944,
         },
         {
             name: "Avocado, raw",
-            amount: "485 mg / 100 g",
-            fdcId: null,
+            amount: "576 mg / 100 g",
+            fdcId: 2710824,
         },
         {
             name: "Atlantic Salmon, raw",
-            amount: "490 mg / 100 g",
-            fdcId: null,
+            amount: "378 mg / 100 g",
+            fdcId: 2684441,
         },
     ],
 };

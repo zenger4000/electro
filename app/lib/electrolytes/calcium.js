@@ -14,12 +14,8 @@ const hero = {
 const quickFacts = {
     facts: [
         {
-            title: "Classification",
-            value: "Essential Mineral & Electrolyte",
-        },
-        {
-            title: "Chemical Symbol",
-            value: "Ca",
+            title: "Chemical Forms",
+            value: "Ca - Ca₃(C₆H₅O₇)₂ - CaCO₃",
         },
         {
             title: "Primary Functions",
@@ -57,6 +53,7 @@ const overview = {
 };
 const benefits = {
     title: "Health Benefits",
+    color: "#e6cac660" ,
 
     benefits: [
         {
@@ -134,33 +131,34 @@ const foodSources = {
     foods: [
         {
             name: "Parmesan Cheese",
-            amount: "Approx. 1,180 mg / 100 g",
-            fdcId: null,
+            amount: "Approx. 850 mg / 100 g",
+            fdcId: 171247,
+            img: "/cheese.png",
         },
         {
             name: "Sardines (with Bones)",
             amount: "Approx. 380 mg / 100 g",
-            fdcId: null,
+            fdcId: 175139,
         },
         {
             name: "Plain Yogurt",
-            amount: "Approx. 180 mg / 100 g",
-            fdcId: null,
+            amount: "Approx. 167 mg / 100 g",
+            fdcId: 2647437,
         },
         {
             name: "Milk",
             amount: "Approx. 120 mg / 100 g",
-            fdcId: null,
+            fdcId: 2705385,
         },
         {
             name: "Kale",
-            amount: "Approx. 150 mg / 100 g",
-            fdcId: null,
+            amount: "Approx. 250 mg / 100 g",
+            fdcId: 168421,
         },
         {
-            name: "Calcium-Fortified Plant Milk",
-            amount: "Varies by Product",
-            fdcId: null,
+            name: "Almonds",
+            amount: "Approx. 260 mg / 100 g",
+            fdcId: 170567,
         },
     ],
 };

@@ -5,7 +5,7 @@ export default function AtRiskGroups({
     note,
 }) {
     return (
-        <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm mx-6">
 
             <div className="border-b border-slate-200 px-8 py-6">
 

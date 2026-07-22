@@ -3,7 +3,7 @@ export default function ElectrolyteOverview({
     paragraphs,
 }) {
     return (
-        <section className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+        <section className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden mx-6">
 
             <div className="border-b border-slate-200 px-8 py-6">
 

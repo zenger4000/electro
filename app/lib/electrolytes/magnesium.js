@@ -14,12 +14,8 @@ const hero = {
 const quickFacts = {
     facts: [
         {
-            title: "Classification",
-            value: "Essential Mineral & Electrolyte",
-        },
-        {
-            title: "Chemical Symbol",
-            value: "Mg",
+            title: "Chemical Forms",
+            value: "Mg - Mg₃(C₆H₅O₇)₂ - Mg(C₂H₄NO₂)₂",
         },
         {
             title: "Primary Functions",
@@ -57,6 +53,7 @@ const overview = {
 };
 const benefits = {
     title: "Health Benefits",
+    color: "#6ae75e60",
 
     benefits: [
         {
@@ -148,13 +145,13 @@ const foodSources = {
         },
         {
             name: "Almonds",
-            amount: "Approx. 270 mg / 100 g",
-            fdcId: null,
+            amount: "Approx. 260 mg / 100 g",
+            fdcId: 170567,
         },
         {
-            name: "Spinach, Raw",
-            amount: "Approx. 79 mg / 100 g",
-            fdcId: null,
+            name: "Spinach, raw",
+            amount: "79 mg / 100 g",
+            fdcId: 168462,
         },
         {
             name: "Black Beans",

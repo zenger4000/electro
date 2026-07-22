@@ -1,4 +1,7 @@
 "use client";
+
+import Link from "next/link";
+
 export default function Page() {
     const cards = [
       {
@@ -57,6 +60,11 @@ export default function Page() {
                   transform: card.transform,
                 }}
               >
+                <Link 
+                  href={`/${card.title.toLowerCase()}`}
+                  // className="block"
+                  // target="_blank"
+                  >
                 <div
                   className="
                     group
@@ -177,7 +185,7 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-  
+              </Link>
                 <div
                   className="
                     absolute

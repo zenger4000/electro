@@ -11,6 +11,9 @@ import { getRating } from "../components/food/ElectrolyteGrid";
 import { getSearchAmount } from "../lib/Nutrition";
 import Link from "next/link";
 import SearchLegend from "./SearchLegend";
+import warning from "/public/warning.svg"
+import Image from "next/image";
+
 
 
 export default function SearchPage() {
@@ -186,22 +189,32 @@ export default function SearchPage() {
            <div
            className="rounded-lg relative border hover:scale-[1.02] p-8 bg-white text-black transition"
           >
+            {(
+                ratings["Sodium, Na"]?.label === "Excessive"
+              ) && <div className="absolute m-1 rounded-md p-1 bottom-1 right-2 bg-red-500 text-xs"><Image width={24} className={"inline-block"} src={warning} alt="warning" /> Excessive Sodium </div>
+            }
             <div className="flex flex-row justify-between">
               <div className="-mt-6 mb-6 -ml-6 text-[#25aaaa] text-xs">
                 {hasFullElectrolyteProfile(food) && <><CompleteDataBadge  size={28}/> Full Electrolyte Profile </> }
               </div>
               <div className="absolute -top-1 right-2 flex gap-1 overflow-visible">
-              {ratings["Potassium, K"]?.label === "Excellent" &&
-              <ElectroExcellence ele="K" />}
 
-              {ratings["Sodium, Na"]?.label === "Excellent" &&
-                  <ElectroExcellence ele="Na" />}
-
-              {ratings["Magnesium, Mg"]?.label === "Excellent" &&
-                  <ElectroExcellence ele="Mg" />}
-
-              {ratings["Calcium, Ca"]?.label === "Excellent" &&
-                  <ElectroExcellence ele="Ca" />}
+              {(
+                ratings["Potassium, K"]?.label === "Excellent" ||
+                ratings["Potassium, K"]?.label === "Excessive"
+              ) && <ElectroExcellence ele="K" />}
+              {(
+                ratings["Sodium, Na"]?.label === "Excellent" ||
+                ratings["Sodium, Na"]?.label === "Excessive"
+              ) && <ElectroExcellence ele="Na" />}
+              {(
+                ratings["Magnesium, Mg"]?.label === "Excellent" ||
+                ratings["Magnesium, Mg"]?.label === "Excessive"
+              ) && <ElectroExcellence ele="Mg" />}
+              {(
+                ratings["Calcium, Ca"]?.label === "Excellent" ||
+                ratings["Calcium, Ca"]?.label === "Excessive"
+              ) && <ElectroExcellence ele="Ca" />}
               </div>
             </div>
 

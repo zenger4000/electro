@@ -3,7 +3,7 @@ export default function FAQ({
     questions,
 }) {
     return (
-        <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm mx-6">
 
             <div className="border-b border-slate-200 px-8 py-6">
 
@@ -34,7 +34,7 @@ export default function FAQ({
                                     {item.question}
                                 </h3>
 
-                                <span className="text-2xl font-light text-slate-500 transition-transform duration-300 group-open:rotate-45">
+                                <span className="text-2xl font-light text-slate-500 transition-transform duration-300 group-open:rotate-45 select-none">
                                     +
                                 </span>
 
