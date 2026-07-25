@@ -19,7 +19,7 @@ export default async function ComparePage({ searchParams }) {
                     </h1>
 
                     <p className="mt-4 text-slate-600">
-                        Choose two foods to compare their nutritional profiles
+                        Choose two foods to compare their nutritional profiles.
                     </p>
 
                 </div>
