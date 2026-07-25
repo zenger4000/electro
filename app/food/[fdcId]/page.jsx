@@ -3,6 +3,7 @@ import FoodHero from "@/app/components/food/FoodHero";
 import MineralGrid from "@/app/components/food/MineralGrid";
 import QuickStats from "@/app/components/food/QuickStats";
 import VitaminGrid from "@/app/components/food/VitaminGrid";
+import CompareButton from "@/app/components/compare/CompareButton";
 
 export default async function FoodDetails({ params }) {
 
@@ -33,6 +34,9 @@ export default async function FoodDetails({ params }) {
     return ( 
         <div className="min-h-screen p-16">
             <FoodHero food={food}/>
+            <div className="my-6 flex justify-center">
+                <CompareButton food={food} />
+            </div>
             <QuickStats  food={food}/>
             <ElectrolyteGrid  food={food}/>
             <VitaminGrid  food={food}/>

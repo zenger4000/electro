@@ -36,14 +36,15 @@ export default function ElectrolyteQuickFacts({ facts }) {
         //     </div>
 
         // </section>
-    <div className="mx-6 -mt-20 md:-mt-32 z-10">
+    <div className="mx-7 -mt-20 md:-mt-32 z-10">
         <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-5 mb-8">
 
         {facts.map((fact) => (
 
             <article
                 key={fact.title}
-                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl last:md:col-span-2
+                last:xl:col-span-1 last:md:justify-self-center last:md:w-1/2 last:xl:w-auto"
             >
                 <div className="p-6 flex flex-col justify-center items-center  text-center">
 

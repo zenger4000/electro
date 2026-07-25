@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Deficiency({
     title,
     introduction,
@@ -6,11 +8,12 @@ export default function Deficiency({
     note,
 }) {
     return (
-        <section className="overflow-hidden rounded-3xl border border-amber-200 bg-white shadow-sm mx-6">
+        <section className="overflow-hidden rounded-3xl border border-amber-200 bg-white shadow-sm mx-7">
 
             <div className="border-b border-amber-200 bg-amber-100 px-8 py-6">
 
-                <h2 className="text-3xl font-bold text-slate-900">
+                <h2 className="flex flex-row gap-3 text-3xl font-bold text-slate-900">
+                <Image src={"/warning.svg"} width={40} height={40} alt="warning" quality={100}/>
                     {title}
                 </h2>
 

@@ -30,10 +30,10 @@ const electrolyteData = {
 
 export function generateStaticParams() {
     return [
-        { electrolyte: "potassium" },
-        { electrolyte: "sodium" },
-        { electrolyte: "magnesium" },
-        { electrolyte: "calcium" },
+        { electrolytes: "potassium" },
+        { electrolytes: "sodium" },
+        { electrolytes: "magnesium" },
+        { electrolytes: "calcium" },
     ];
 }
 

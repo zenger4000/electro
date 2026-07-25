@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function FAQ({
     title,
     questions,
@@ -7,11 +9,12 @@ export default function FAQ({
 
             <div className="border-b border-slate-200 px-8 py-6">
 
-                <h2 className="text-3xl font-bold text-slate-900">
+                <h2 className="flex flex-row justify-center items-center gap-3 text-3xl font-bold text-slate-900">
+                <Image src={"/faq.svg"} width={40} height={40} alt="faq" quality={100}/>
                     {title}
                 </h2>
 
-                <p className="mt-2 text-slate-600">
+                <p className="mt-2 text-slate-600 text-center">
                     Answers to common questions about this electrolyte.
                 </p>
 

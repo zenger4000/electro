@@ -139,26 +139,32 @@ const foodSources = {
             name: "Sardines (with Bones)",
             amount: "Approx. 380 mg / 100 g",
             fdcId: 175139,
+            img: "/sardines.png",
         },
         {
             name: "Plain Yogurt",
             amount: "Approx. 167 mg / 100 g",
             fdcId: 2647437,
+            img: "/yogurt.png",
+
         },
         {
             name: "Milk",
             amount: "Approx. 120 mg / 100 g",
             fdcId: 2705385,
+            img: "/milk.png",
         },
         {
             name: "Kale",
             amount: "Approx. 250 mg / 100 g",
             fdcId: 168421,
+            img: "/kale.png",
         },
         {
             name: "Almonds",
             amount: "Approx. 260 mg / 100 g",
             fdcId: 170567,
+            img: "/almonds.png",
         },
     ],
 };

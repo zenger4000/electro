@@ -53,7 +53,7 @@ const overview = {
 
 const benefits = {
     title: "Health Benefits",
-    color: "#e22c3760" ,
+    color: "#f0959b" ,
 
     benefits: [
         {
@@ -129,32 +129,37 @@ const foodSources = {
             name: "Potato, flesh and skin, raw",
             amount: "425 mg / 100 g",
             fdcId: 170026,
-            img: "/../public/potassium.png",
+            img: "/potato.png",
         },
         {
             name: "Spinach, raw",
             amount: "558 mg / 100 g",
             fdcId: 168462,
+            img: "/spinach.png",
         },
         {
             name: "White Beans, mature seeds, raw",
             amount: "561 mg / 100 g",
-            fdcId: 175202,
+            fdcId: 175249,
+            img: "/whitebeans.png",
         },
         {
             name: "Banana, raw",
             amount: "358 mg / 100 g",
             fdcId: 173944,
+            img: "/banana.png",
         },
         {
             name: "Avocado, raw",
             amount: "576 mg / 100 g",
             fdcId: 2710824,
+            img: "/avocado.png",
         },
         {
             name: "Atlantic Salmon, raw",
             amount: "378 mg / 100 g",
             fdcId: 2684441,
+            img: "/salmon.png",
         },
     ],
 };

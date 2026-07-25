@@ -1,4 +1,4 @@
-import { url } from "inspector";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function FoodSources({
@@ -7,47 +7,43 @@ export default function FoodSources({
     foods,
 }) {
     return (
-        <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm mx-6">
+        <section className="overflow-hidden pb-6 rounded-3xl bg-white shadow-sm mx-7">
 
-            <div className="border-b border-slate-200 px-8 py-6">
+            <div className=" px-8 py-6">
 
                 <h2 className="text-3xl font-bold text-slate-900">
                     {title}
                 </h2>
 
-                <p className="mt-2 text-slate-600">
+                <p className="mt-2">
                     {description}
                 </p>
 
             </div>
 
-            <div className="divide-y divide-slate-200">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-5">
 
                 {foods.map((food) => (
-
+                    
                     <div
                         key={food.name}
-                        style={{
-                            backgroundImage: `url(${food.img})`
-                          }}
-                        className="flex flex-col gap-5 px-8 py-16 md:flex-row md:items-center md:justify-between bg-[url('/salt.png')] bg-cover bg-right bg-no-repeat"
+                        className="flex overflow-hidden rounded-xl relative flex-col md:flex-row items-center justify-center md:justify-end"
                     >
+                        <div className="absolute drop-shadow-md left-1 md:left-2 p-4 min-w-[25%] max-w-[85%] z-10 h-fit flex flex-col content-between">
 
-                        <div className="bg-white/80 rounded-xl p-4 min-w-[25%] max-w-[80%]">
-
-                            <h3 className="text-lg font-semibold text-slate-900">
+                            <h3 className="text-sm md:text-md  font-semibold text-white">
                                 {food.name}
                             </h3>
 
-                            <p className="mt-3 mb-4 text-slate-600">
+                            <p className="text-sm md:text-md mt-3 mb-4 text-slate-50 ">
                                 {food.amount}
                             </p>
 
                             {food.fdcId ? (
-
+                                
                                 <Link
-                                    href={`/food/${food.fdcId}`}
-                                    className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:bg-slate-900 hover:text-white"
+                                href={`/food/${food.fdcId}`}
+                                className="rounded-lg max-w-fit text-sm md:text-md font-semibold text-slate-50 transition hover:scale-105"
                                 >
                                     Food Page →
                                 </Link>
@@ -61,6 +57,7 @@ export default function FoodSources({
                                 )}
 
                         </div>
+                        <Image src={food.img} alt="photo" width={650} height={170} className="bg-right" />
 
                         
 

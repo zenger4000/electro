@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ExcessIntake({
     title,
     introduction,
@@ -10,7 +12,8 @@ export default function ExcessIntake({
 
             <div className="border-b border-red-200 bg-red-100 px-8 py-6">
 
-                <h2 className="text-3xl font-bold text-slate-900">
+                <h2 className="flex flex-row gap-3 text-3xl font-bold text-slate-900">
+                <Image src={"/warning.svg"} width={40} height={40} alt="warning" quality={100}/>
                     {title}
                 </h2>
 

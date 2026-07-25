@@ -4,7 +4,7 @@ export default function ElectrolyteBenefits({
     benefits,
 }) {
     return (
-        <section className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden mx-6">
+        <section className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden mx-7">
 
             <div className="border-b border-slate-200 px-8 py-6">
 
