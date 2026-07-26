@@ -79,9 +79,12 @@ export default function CompareTray() {
 
         <div
             className={`
+                w-fit
+                min-h-[200px]
+                max-h-[200px]
                 fixed
                 right-0
-                top-1/2
+                top-3/4
                 z-50
                 -translate-y-1/2
                 transition-transform
@@ -89,12 +92,12 @@ export default function CompareTray() {
                 ease-in-out
                 ${open
                     ? "translate-x-0"
-                    : "translate-x-[calc(100%-3.5rem)]"
+                    : "translate-x-[calc(100%-3rem)]"
                 }
             `}
         >
 
-            <div className="flex items-stretch">
+            <div className="flex">
 
                 {/* Handle */}
 
@@ -103,13 +106,15 @@ export default function CompareTray() {
                     onClick={() => setOpen(!open)}
                     className="
                         flex
-                        w-14
+                        shrink-0
+                        w-12
+                        h-28
+                        text-sm
                         items-center
                         justify-center
-                        rounded-l-2xl
+                        rounded-l-xl
                         bg-slate-900
-                        px-2
-                        text-sm
+                        
                         font-semibold
                         text-white
                         shadow-2xl
@@ -140,7 +145,7 @@ export default function CompareTray() {
 
                 <div
                     className="
-                        w-[min(90vw,520px)]
+                        w-[min(85vw,400px)]
                         
                         border
                         border-slate-200

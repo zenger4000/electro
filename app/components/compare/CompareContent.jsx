@@ -10,7 +10,7 @@ import {
     getElectrolytes,
     getVitamins,
     getMinerals,
-} from "@/app/lib/nutrition";
+} from "@/app/lib/Nutrition";
 
 
 function formatValue(amount, unit) {
@@ -236,7 +236,7 @@ export default function CompareContent({
 
     return (
 
-        <main className="min-h-screen bg-slate-50 px-4 py-16 sm:px-6 lg:px-8">
+        <main className="min-h-screen bg-[#e9f8f8] px-4 py-20 sm:px-6 lg:px-8">
 
             <div className="mx-auto max-w-6xl">
 

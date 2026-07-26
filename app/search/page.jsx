@@ -13,6 +13,7 @@ import Link from "next/link";
 import SearchLegend from "./SearchLegend";
 import warning from "/public/warning.svg"
 import Image from "next/image";
+import CompareButton from "../components/compare/CompareButton";
 
 
 

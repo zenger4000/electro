@@ -1,5 +1,6 @@
 import CompleteDataBadge from "../CompleteDataBadge";
 import Image from "next/image";
+import CompareButton from "../compare/CompareButton";
 
 const FoodHero = ({ food }) => {
     return (
@@ -80,8 +81,11 @@ const FoodHero = ({ food }) => {
                     )}
 
                 </div>
-
+                <div className="my-6 self-end flex justify-end">
+                    <CompareButton food={food} />
+                </div>
             </div>
+
 
         </section>
     );

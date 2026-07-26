@@ -3,7 +3,7 @@ import FoodHero from "@/app/components/food/FoodHero";
 import MineralGrid from "@/app/components/food/MineralGrid";
 import QuickStats from "@/app/components/food/QuickStats";
 import VitaminGrid from "@/app/components/food/VitaminGrid";
-import CompareButton from "@/app/components/compare/CompareButton";
+import { notFound } from "next/navigation";
 
 export default async function FoodDetails({ params }) {
 
@@ -17,7 +17,7 @@ export default async function FoodDetails({ params }) {
         if (!response.ok) {
             switch (response.status) {
                 case 404:
-                    throw new Error("Food not found.");
+                    notFound();
         
                 case 429:
                     throw new Error("Too many requests. Please try again later.");
@@ -34,9 +34,6 @@ export default async function FoodDetails({ params }) {
     return ( 
         <div className="min-h-screen p-16">
             <FoodHero food={food}/>
-            <div className="my-6 flex justify-center">
-                <CompareButton food={food} />
-            </div>
             <QuickStats  food={food}/>
             <ElectrolyteGrid  food={food}/>
             <VitaminGrid  food={food}/>
