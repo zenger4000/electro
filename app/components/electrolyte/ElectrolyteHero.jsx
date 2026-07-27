@@ -1,11 +1,7 @@
 import Image from "next/image";
 export default function ElectrolyteHero({
-    name,
-    symbol,
     color,
     url,
-    description,
-    dailyValue,
 }) {
     return (
         <section className="relative w-full">

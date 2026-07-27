@@ -97,7 +97,8 @@ export default function SearchPage() {
   
   return (
     <div className="pt-20">
-    <main className=" mx-auto w-11/12 border border-white rounded-3xl mb-12 md:p-24 p-8 min-h-[80vh] text-white bg-[#254141] transition-all">
+      
+    <main  className="mx-auto w-11/12 border border-white rounded-3xl mb-12 md:p-24 p-8 min-h-[80vh] text-white bg-slate-950 transition-all">
 
       <h1 className="inline-block text-2xl md:text-4xl font-bold mb-8">
         Search Foods

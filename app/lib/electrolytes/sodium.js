@@ -1,14 +1,6 @@
 const hero = {
-    name: "Sodium",
-    symbol: "Na",
     color: "#9d51cd",
-    url: "/../public/sodium.png",
-
-    description:
-        "An essential mineral and electrolyte that helps regulate fluid balance, supports nerve signaling, enables muscle contraction, and contributes to maintaining normal blood pressure and blood volume.¹²",
-
-    dailyValue:
-        "1,500 mg/day (Adequate Intake for Adults)",
+    url: "/sodium.png",
 };
 
 const quickFacts = {
