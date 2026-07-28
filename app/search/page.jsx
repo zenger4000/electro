@@ -14,12 +14,6 @@ import SearchLegend from "./SearchLegend";
 import warning from "/public/warning.svg"
 import Image from "next/image";
 
-export const metadata = {
-  title: "Search | Electrolyfe",
-  description:
-    "Search for foods across multiple databases",
-};
-
 export default function SearchPage() {
 
   const searchParams = useSearchParams();
