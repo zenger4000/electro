@@ -1,8 +1,21 @@
-import CompleteDataBadge from "../CompleteDataBadge";
 import Image from "next/image";
 import CompareButton from "../compare/CompareButton";
 
 const FoodHero = ({ food }) => {
+
+    const waterNutrient = food.foodNutrients?.find(
+        (nutrient) =>
+            nutrient.nutrient?.name?.toLowerCase() === "water"
+    );
+    
+    const waterAmount = waterNutrient?.amount ?? null;
+    let hydrationLevel = "Low";
+    if (waterAmount >= 80) {
+        hydrationLevel = "High";
+    } else if (waterAmount >= 60) {
+        hydrationLevel = "Moderate";
+    }
+
     return (
         <section className=" relative overflow-hidden rounded-3xl border border-slate-200 p-8 shadow-lg mt-6 mb-8">
 
@@ -76,6 +89,18 @@ const FoodHero = ({ food }) => {
 
                             <p className="font-semibold text-slate-800">
                                 {food.servingSize} {food.servingSizeUnit}
+                            </p>
+                        </div>
+                    )}
+
+                    {waterAmount && (
+                        <div className="rounded-xl bg-sky-50 px-5 py-3 shadow-lg ">
+                            <p className="text-xs uppercase tracking-wider text-slate-500">
+                                Water Content
+                            </p>
+
+                            <p className="font-semibold text-slate-800">
+                                {hydrationLevel}
                             </p>
                         </div>
                     )}

@@ -13,9 +13,12 @@ import Link from "next/link";
 import SearchLegend from "./SearchLegend";
 import warning from "/public/warning.svg"
 import Image from "next/image";
-import CompareButton from "../components/compare/CompareButton";
 
-
+export const metadata = {
+  title: "Search | Electrolyfe",
+  description:
+    "Search for foods across multiple databases",
+};
 
 export default function SearchPage() {
 
@@ -100,7 +103,7 @@ export default function SearchPage() {
       
     <main  className="mx-auto w-11/12 border border-white rounded-3xl mb-12 md:p-24 p-8 min-h-[80vh] text-white bg-slate-950 transition-all">
 
-      <h1 className="inline-block text-2xl md:text-4xl font-bold mb-8">
+      <h1 className="inline-block text-2xl md:text-4xl font-bold mb-8 select-none">
         Search Foods
       </h1>
 
@@ -111,19 +114,19 @@ export default function SearchPage() {
         className="flex flex-wrap justify-center gap-3 mb-8 columns-6"
       >
         <input
-          className="flex-1 rounded-lg border-2 p-3 text-black focus:border-[#25aaaa] focus:outline-none"
+          className="flex-1 rounded-lg border-2 p-3 text-black focus:border-slate-700 focus:outline-none"
           placeholder="Search foods..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
 
         <button
-          className="rounded-lg bg-[#25aaaa] px-2 md:px-6 text-white"
+          className="rounded-lg bg-slate-600 px-2 md:px-6 text-white"
         >
           Search
         </button>
         {/* food type selection */}
-        <div className="inline-flex overflow-hidden rounded-xl bg-white">
+        <div className="inline-flex overflow-hidden bg-white">
           {[
             { value: "all", label: "All" },
             { value: "branded", label: "Branded" },
@@ -145,7 +148,7 @@ export default function SearchPage() {
                 border-r last:border-r-0 border-gray-300
                 ${
                   urlType === option.value
-                  ? "bg-[#25aaaa] text-white"
+                  ? "bg-slate-600 text-white"
                   : "bg-white text-gray-700 hover:bg-[#e9f8f8]"
                 }
         `}

@@ -32,7 +32,7 @@ export default function Home() {
         <TiltCard>
           <div className="p-6 flex justify-center items-center flex-col gap-2">
             <h2 className="text-xl font-bold">
-            5 Essential Electrolytes
+              4 Essential Electrolytes
             </h2>
             <Image className="w-1/2" src={mineral} alt="food icon"></Image>
           </div>
@@ -41,7 +41,7 @@ export default function Home() {
         <TiltCard>
           <div className="p-6 flex justify-center items-center flex-col gap-2">
             <h2 className="text-xl font-bold">
-            100,000+ Foods Indexed
+              300,000+ Foods Indexed
             </h2>
             <Image className="w-1/2" src={food} alt="food icon"></Image>
           </div>
@@ -50,7 +50,7 @@ export default function Home() {
         <TiltCard>
           <div className="p-6 flex justify-center items-center flex-col gap-2">
             <h2 className="text-xl font-bold">
-            Multiple Hydration Tools
+              Hydration Insight
             </h2>
             <Image className="w-1/2" src={hydration} alt="food icon"></Image>
           </div>
@@ -58,7 +58,7 @@ export default function Home() {
         <TiltCard>
           <div className="p-6 flex justify-center items-center flex-col gap-2">
             <h2 className="text-xl font-bold">
-            Nutrition Calculators
+              Nutrition Comparisons
             </h2>
             <Image className="w-1/2" src={calculator} alt="food icon"></Image>
           </div>
@@ -66,7 +66,7 @@ export default function Home() {
         <TiltCard>
           <div className="p-6 flex justify-center items-center flex-col gap-2">
             <h2 className="text-xl font-bold">
-            Develop Healthy Habits
+              Develop Healthy Habits
             </h2>
             <Image className="w-1/2" src={healthy} alt="food icon"></Image>
           </div>
@@ -74,7 +74,7 @@ export default function Home() {
         <TiltCard>
           <div className="p-6 flex justify-center items-center flex-col gap-2">
             <h2 className="text-xl font-bold">
-            Science-Based Information
+              Science-Based Information
             </h2>
             <Image className="w-1/2" src={science} alt="food icon"></Image>
           </div>

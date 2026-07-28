@@ -1,7 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import FloatingIon from "../components/FloatingIon";
 import TiltCard from "../Tiltcard";
+
+export const metadata = {
+  title: "About Us | Electrolyfe",
+  description:
+    "About Electrolyfe's inspiration and developer",
+};
 
 export default function AboutPage() {
 
@@ -219,8 +227,7 @@ export default function AboutPage() {
       </div>
 
     </div>
-
-
+<FloatingIon />
 
   </div>
 
@@ -243,34 +250,13 @@ export default function AboutPage() {
   ">
 
     <p className="
-      text-sm
-      text-slate-500
+      text-xl
+      
     ">
       Four major electrolytes. Thousands of foods.
-      One place to explore.
+      <span className="text-[#6ae75e]"> One place to explore.</span>
     </p>
 
-
-    <div className="
-      flex
-      items-center
-      gap-3
-      text-xs
-      tracking-widest
-      uppercase
-      text-slate-600
-    ">
-
-      <span className="
-        w-2
-        h-2
-        rounded-full
-        bg-[#6ae75e]"
-      />
-
-      Built with curiosity
-
-    </div>
     
 
   </div>
@@ -290,7 +276,7 @@ export default function AboutPage() {
 
           <div className="max-w-2xl mb-20">
 
-            <p className="text-sm tracking-[0.3em] uppercase text-slate-400 mb-5">
+            <p className="text-sm tracking-[0.3em] uppercase text-[#6ae75e] mb-5">
               The essentials
             </p>
 
@@ -449,7 +435,7 @@ export default function AboutPage() {
       linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
     `,
-    animation: "driftLeft 8s linear infinite",
+    animation: "driftgrid 8s linear infinite",
 
     backgroundSize: "80px 80px"
   }}
@@ -461,7 +447,7 @@ export default function AboutPage() {
 
             <div>
 
-              <p className="text-sm tracking-[0.3em] uppercase text-slate-300 mb-6">
+              <p className="text-sm tracking-[0.3em] uppercase text-[#6ae75e] mb-6">
                 Why Electrolyfe?
               </p>
 
@@ -517,7 +503,7 @@ export default function AboutPage() {
 
             <div>
 
-              <p className="text-sm tracking-[0.3em] uppercase text-slate-400 mb-5">
+              <p className="text-sm tracking-[0.3em] uppercase text-[#6ae75e] mb-5">
                 Behind the project
               </p>
 
@@ -531,8 +517,8 @@ export default function AboutPage() {
 
             <p className="max-w-md text-slate-500 leading-relaxed">
               Electrolyfe isn't just a collection of pages.
-              It's a full project built around real data,
-              real APIs, and real engineering challenges.
+              It's the result of personal questions igniting ideas and evolving into a collection
+              of features that built this helpful website.
             </p>
 
           </div>
@@ -541,9 +527,38 @@ export default function AboutPage() {
 
         
       <div className="flex flex-wrap justify-center items-center gap-6">
-        <TiltCard ></TiltCard>
-        <TiltCard ></TiltCard>
-        <TiltCard ></TiltCard>
+      <TiltCard>
+          <div className="p-6 flex justify-center items-center flex-col gap-2">
+            <h2 className="text-2xl font-bold">
+              Electrolyte questions
+            </h2>
+            <Image width={130} height={130} src={"/question.svg"} alt="web icon"></Image>
+          </div>
+        </TiltCard>
+        <span className="hidden min-[1200px]:block text-5xl">
+          &#8594;
+        </span>
+
+        <TiltCard>
+          <div className="p-6 flex justify-center items-center flex-col gap-2">
+            <h2 className="text-2xl font-bold">
+              Interesting ideas
+            </h2>
+            <Image width={130} height={130} src={"/idea.svg"} alt="web icon"></Image>
+          </div>
+        </TiltCard>
+        <span className="hidden min-[1200px]:block text-5xl">
+          &#8594;
+        </span>
+
+        <TiltCard>
+          <div className="p-6 flex justify-center items-center flex-col gap-2">
+            <h2 className="text-2xl font-bold">
+              Helpful website
+            </h2>
+            <Image width={130} height={130} src={"/website.svg"} alt="web icon"></Image>
+          </div>
+        </TiltCard>
       </div>
       </section>
 
@@ -565,7 +580,7 @@ export default function AboutPage() {
       linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
     `,
-    animation: "driftUp 8s linear infinite",
+    animation: "driftgrid 8s linear infinite",
     backgroundSize: "80px 80px"
   }}
 />
@@ -574,7 +589,7 @@ export default function AboutPage() {
 
           <div className="text-center">
 
-            <p className="text-sm tracking-[0.3em] uppercase text-slate-500 mb-6">
+            <p className="text-sm tracking-[0.3em] uppercase text-[#6ae75e] mb-6">
               The person behind Electrolyfe
             </p>
 
@@ -586,7 +601,7 @@ export default function AboutPage() {
 
               <p>
                 Hi, I'm <span className="text-white font-semibold">
-                  Your Name
+                  Amr Mostafa
                 </span>.
               </p>
 
@@ -610,7 +625,7 @@ export default function AboutPage() {
             <div className="mt-10 flex flex-wrap justify-center gap-4">
 
               <a
-                href="YOUR_GITHUB_URL"
+                href="https://github.com/zenger4000"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
@@ -629,7 +644,7 @@ export default function AboutPage() {
 
 
               <a
-                href="YOUR_LINKEDIN_URL"
+                href="https://www.linkedin.com/in/amr-mostafa-501627231/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
@@ -637,11 +652,11 @@ export default function AboutPage() {
                   py-3
                   rounded-full
                   border
-                  border-slate-700
-                  text-white
+                  bg-white
+                  text-slate-950
                   font-semibold
                   transition
-                  hover:bg-slate-800
+                  hover:bg-slate-200
                 "
               >
                 LinkedIn
@@ -649,20 +664,20 @@ export default function AboutPage() {
 
 
               <a
-                href="mailto:YOUR_EMAIL@example.com"
+                href="mailto:amrmostafa.co@gmail.com"
                 className="
                   px-6
                   py-3
                   rounded-full
                   border
-                  border-slate-700
-                  text-white
+                  bg-white
+                  text-slate-950
                   font-semibold
                   transition
-                  hover:bg-slate-800
+                  hover:bg-slate-200
                 "
               >
-                Contact
+                Contact Mail
               </a>
 
             </div>
@@ -691,7 +706,7 @@ export default function AboutPage() {
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
 
-          <p className="text-sm tracking-[0.3em] uppercase text-slate-400 mb-6">
+          <p className="text-sm tracking-[0.3em] uppercase text-[#6ae75e] mb-6">
             Your turn
           </p>
 
@@ -722,23 +737,6 @@ export default function AboutPage() {
             >
               Explore Foods
             </Link>
-
-            <Link
-              href="/potassium"
-              className="
-                px-8
-                py-4
-                rounded-full
-                border
-                border-slate-300
-                font-semibold
-                transition
-                hover:bg-slate-100
-              "
-            >
-              Start with Potassium
-            </Link>
-
           </div>
 
         </div>

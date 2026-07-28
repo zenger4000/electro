@@ -32,37 +32,37 @@ export default function Footer() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <a
-                    href="/electrolytes"
+                    href="/"
                     className="transition hover:text-white"
                   >
-                    Electrolytes
+                    Home
                   </a>
                 </li>
+              <li>
+                <a
+                  href="/search"
+                  className="transition hover:text-white"
+                >
+                  Food Search
+                </a>
+              </li>
+  
+              <li>
+                <a
+                  href="/minerals"
+                  className="transition hover:text-white"
+                >
+                  Essential Minerals
+                </a>
+              </li>
+  
   
                 <li>
                   <a
-                    href="/foods"
+                    href="/about"
                     className="transition hover:text-white"
                   >
-                    Food Sources
-                  </a>
-                </li>
-  
-                <li>
-                  <a
-                    href="/blog"
-                    className="transition hover:text-white"
-                  >
-                    Articles
-                  </a>
-                </li>
-  
-                <li>
-                  <a
-                    href="/specialists"
-                    className="transition hover:text-white"
-                  >
-                    Specialists
+                    About
                   </a>
                 </li>
               </ul>

@@ -1,10 +1,5 @@
 // app/not-found.jsx
 
-export const metadata = {
-  title: "Page Dehydrated | Electrolyfe",
-  description:
-      "Looks like this page has lost its electrolytes. Let's get you back on track.",
-};
 
 export default function NotFound() {
   return (

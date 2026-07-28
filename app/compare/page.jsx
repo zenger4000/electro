@@ -1,5 +1,10 @@
 import CompareContent from "@/app/components/compare/CompareContent";
 
+export const metadata = {
+    title: "Compare | Electrolyfe",
+    description:
+      "Compare between 2 food's nutrational data",
+  };
 
 export default async function ComparePage({ searchParams }) {
 
@@ -14,13 +19,15 @@ export default async function ComparePage({ searchParams }) {
 
                 <div className="mx-auto max-w-4xl text-center">
 
-                    <h1 className="text-4xl font-bold text-slate-900">
+                    <h1 className="mt-8 text-4xl font-bold text-slate-900">
                         Compare Foods
                     </h1>
 
-                    <p className="mt-4 text-slate-600">
+                    <p className="mt-4 text-slate-600 mb-8">
                         Choose two foods to compare their nutritional profiles.
                     </p>
+
+                    <a href="/search">go to the search page</a>
 
                 </div>
 

@@ -155,7 +155,7 @@ export default function SearchLegend() {
 
               <p className="text-slate-600">
                     Indicates the food is excessive in
-                    <strong> Sodium</strong>.
+                    <strong> Sodium</strong> and serving sizes should be considered carefully.
                   </p>
 
             </div>

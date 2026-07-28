@@ -5,6 +5,12 @@ import QuickStats from "@/app/components/food/QuickStats";
 import VitaminGrid from "@/app/components/food/VitaminGrid";
 import { notFound } from "next/navigation";
 
+export const metadata = {
+    title: "Food Details | Electrolyfe",
+    description:
+      "Result food nutritional data",
+  };
+
 export default async function FoodDetails({ params }) {
 
     const fdcId = params.fdcId;

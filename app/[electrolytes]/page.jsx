@@ -39,6 +39,15 @@ export function generateStaticParams() {
 
 export const dynamicParams = false;
 
+export async function generateMetadata({ params }) {
+    const electro = params.electrolytes;
+
+    return {
+        title: `${electro.charAt(0).toUpperCase()+electro.slice(1)} | Electrolyfe`,
+        description: `Learn about ${electro.charAt(0).toUpperCase()+electro.slice(1)}, its role in the body, and common food sources.`,
+    };
+}
+
 export default function ElectrolytePage({ params }) {
 
     const data = electrolyteData[params.electrolytes];

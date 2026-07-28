@@ -56,13 +56,21 @@ export async function GET(request) {
 
     if (!response.ok) {
       const errorText = await response.text();
+  
       console.error("USDA Error:", response.status, errorText);
-    
-      return NextResponse.json(
-        { error: errorText },
-        { status: response.status }
+  
+      return Response.json(
+          {
+              error:
+                  response.status >= 500
+                      ? "The USDA food database is temporarily unavailable. Please try again later."
+                      : "Failed to fetch food data.",
+          },
+          {
+              status: response.status,
+          }
       );
-    }
+  }
 
     const data = await response.json();
 
