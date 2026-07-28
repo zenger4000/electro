@@ -1,6 +1,6 @@
 const hero = {
     color: "#e22c37",
-    url: "/../public/potassium.png",       
+    url: "/potassium.png",       
 };
 
 const quickFacts = {

@@ -1,6 +1,6 @@
 const hero = {
     color: "#6ae75e",
-    url: "/../public/magnesium.png",
+    url: "/magnesium.png",
 };
 
 const quickFacts = {
