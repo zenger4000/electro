@@ -5,11 +5,6 @@ import Link from "next/link";
 import FloatingIon from "../components/FloatingIon";
 import TiltCard from "../Tiltcard";
 
-export const metadata = {
-  title: "About Us | Electrolyfe",
-  description:
-    "About Electrolyfe's inspiration and developer",
-};
 
 export default function AboutPage() {
 
