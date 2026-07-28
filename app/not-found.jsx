@@ -66,8 +66,8 @@ export default function NotFound() {
           mx-auto
           mb-8
         ">
-          The page you're looking for doesn't exist, may have moved,
-          or you've followed a link that has run out of electrolytes.
+          The page you&apos;re looking for doesn&apos;t exist, may have moved,
+          or you&apos;ve followed a link that has run out of electrolytes.
         </p>
 
 
