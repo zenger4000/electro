@@ -36,58 +36,88 @@ export default async function ComparePage({ searchParams }) {
     }
 
 
-    const [response1, response2] =
-        await Promise.all([
+    // const [response1, response2] =
+    //     await Promise.all([
 
-            fetch(
-                `https://api.nal.usda.gov/fdc/v1/food/${food1}?api_key=${process.env.FDC_API_KEY}`,
-                {
-                    next: {
-                        revalidate: 86400
-                    }
+    //         fetch(
+    //             `https://api.nal.usda.gov/fdc/v1/food/${food1}?api_key=${process.env.FDC_API_KEY}`,
+    //             {
+    //                 next: {
+    //                     revalidate: 86400
+    //                 }
+    //             }
+    //         ),
+
+    //         fetch(
+    //             `https://api.nal.usda.gov/fdc/v1/food/${food2}?api_key=${process.env.FDC_API_KEY}`,
+    //             {
+    //                 next: {
+    //                     revalidate: 86400
+    //                 }
+    //             }
+    //         ),
+
+    //     ]);
+
+
+    // if (!response1.ok || !response2.ok) {
+
+    //     return (
+    //         <main className="min-h-screen bg-[#e9f8f8] px-4 py-16">
+
+    //             <div className="mx-auto max-w-4xl text-center">
+
+    //                 <h1 className="text-3xl font-bold text-slate-900">
+    //                     Unable to compare these foods
+    //                 </h1>
+
+    //                 <p className="mt-4 text-slate-600">
+    //                     One or both foods could not be loaded from USDA FoodData Central.
+    //                 </p>
+
+    //             </div>
+
+    //         </main>
+    //     );
+    // }
+
+
+    // const [foodA, foodB] =
+    //     await Promise.all([
+    //         response1.json(),
+    //         response2.json(),
+    //     ]);
+
+    const response = await fetch(
+        `https://api.nal.usda.gov/fdc/v1/foods?fdcIds=${food1},${food2}&api_key=${process.env.FDC_API_KEY}`,
+        {
+            next: {
+                    revalidate: 86400
                 }
-            ),
+        }
+      );
 
-            fetch(
-                `https://api.nal.usda.gov/fdc/v1/food/${food2}?api_key=${process.env.FDC_API_KEY}`,
-                {
-                    next: {
-                        revalidate: 86400
-                    }
-                }
-            ),
-
-        ]);
-
-
-    if (!response1.ok || !response2.ok) {
-
+    if (!response.ok) {
         return (
-            <main className="min-h-screen bg-[#e9f8f8] px-4 py-16">
-
-                <div className="mx-auto max-w-4xl text-center">
-
-                    <h1 className="text-3xl font-bold text-slate-900">
-                        Unable to compare these foods
-                    </h1>
-
-                    <p className="mt-4 text-slate-600">
-                        One or both foods could not be loaded from USDA FoodData Central.
-                    </p>
-
-                </div>
-
-            </main>
-        );
+                    <main className="min-h-screen bg-[#e9f8f8] px-4 py-16">
+        
+                        <div className="mx-auto max-w-4xl text-center">
+        
+                            <h1 className="text-3xl font-bold text-slate-900">
+                                Unable to compare these foods
+                            </h1>
+        
+                            <p className="mt-4 text-slate-600">
+                                One or both foods could not be loaded from USDA FoodData Central.
+                            </p>
+        
+                        </div>
+        
+                    </main>
+                );
     }
 
-
-    const [foodA, foodB] =
-        await Promise.all([
-            response1.json(),
-            response2.json(),
-        ]);
-
+    const [foodA , foodB] = await response.json()
 
     return (
         <CompareContent

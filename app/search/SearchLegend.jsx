@@ -150,7 +150,7 @@ export default function SearchLegend() {
 
             <div className="flex content-between items-center gap-2 mb-12">
               <div className="min-w-fit">
-              <div className=" m-1 rounded-md p-1  bg-red-500 text-xs"><Image width={24} className={"inline-block"} src={warning} alt="warning" /> Excessive Sodium </div>
+              <div className=" m-1 rounded-md p-1 bg-red-500 text-xs"><Image width={18} className={"inline-block"} src={warning} alt="warning" /> Excessive Sodium </div>
               </div>
 
               <p className="text-slate-600">

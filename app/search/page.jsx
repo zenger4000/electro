@@ -190,7 +190,7 @@ export default function SearchPage() {
           >
             {(
                 ratings["Sodium, Na"]?.label === "Excessive"
-              ) && <div className="absolute m-1 rounded-md p-1 bottom-1 right-2 bg-red-500 text-xs"><Image width={24} className={"inline-block"} src={warning} alt="warning" /> Excessive Sodium </div>
+              ) && <div className="absolute m-1 rounded-md p-[2px] bottom-1 right-2 bg-red-500 text-xs"><Image width={18} className={"inline-block"} src={warning} alt="warning" /> Excessive Sodium </div>
             }
             <div className="flex flex-row justify-between">
               <div className="-mt-6 mb-6 -ml-6 text-[#25aaaa] text-xs">
@@ -222,10 +222,6 @@ export default function SearchPage() {
             <h2 className="font-semibold pb-1">
               {food.description} - {food.fdcId}
             </h2>
-            
-            <p>   
-              {/* {food.foodNutrients.map((n)=> n.nutrientName )} */}
-           </p>
 
             <p className="text-sm ">
               <span className={`p-1 text-xs text-white rounded-md

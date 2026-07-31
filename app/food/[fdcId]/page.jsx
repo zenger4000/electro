@@ -38,7 +38,7 @@ export default async function FoodDetails({ params }) {
         
     const food = await response.json();
     return ( 
-        <div className="min-h-screen p-16">
+        <div className="min-h-screen pt-12 p-8 md:p-16">
             <FoodHero food={food}/>
             <QuickStats  food={food}/>
             <ElectrolyteGrid  food={food}/>

@@ -9,11 +9,15 @@ const FoodHero = ({ food }) => {
     );
     
     const waterAmount = waterNutrient?.amount ?? null;
+
     let hydrationLevel = "Low";
+    
     if (waterAmount >= 80) {
         hydrationLevel = "High";
     } else if (waterAmount >= 60) {
         hydrationLevel = "Moderate";
+    } else if (waterAmount <= 5) {
+        hydrationLevel = "Minimal"
     }
 
     return (
@@ -47,7 +51,7 @@ const FoodHero = ({ food }) => {
                 {/* Metadata */}
                 <div className="mt-8 flex flex-wrap gap-3">
 
-                    <div className="rounded-xl bg-sky-50  px-5 py-3 shadow-lg ">
+                    <div className="rounded-xl bg-sky-50  p-3 shadow-lg ">
                         <p className="text-xs uppercase tracking-wider text-slate-500">
                             FDC ID
                         </p>
@@ -58,7 +62,7 @@ const FoodHero = ({ food }) => {
                     </div>
 
                     {food.publicationDate && (
-                        <div className="rounded-xl bg-sky-50 px-5 py-3 shadow-lg ">
+                        <div className="rounded-xl bg-sky-50 p-3 shadow-lg ">
                             <p className="text-xs uppercase tracking-wider text-slate-500">
                                 Published
                             </p>
@@ -70,7 +74,7 @@ const FoodHero = ({ food }) => {
                     )}
 
                     {food.foodClass && (
-                        <div className="rounded-xl bg-sky-50  px-5 py-3 shadow-lg ">
+                        <div className="rounded-xl bg-sky-50 p-3 shadow-lg ">
                             <p className="text-xs uppercase tracking-wider text-slate-500">
                                 Food Class
                             </p>
@@ -82,7 +86,7 @@ const FoodHero = ({ food }) => {
                     )}
 
                     {food.servingSize && (
-                        <div className="rounded-xl bg-sky-50 px-5 py-3 shadow-lg ">
+                        <div className="rounded-xl bg-sky-50 p-3 shadow-lg ">
                             <p className="text-xs uppercase tracking-wider text-slate-500">
                                 Serving Size
                             </p>
@@ -93,8 +97,8 @@ const FoodHero = ({ food }) => {
                         </div>
                     )}
 
-                    {waterAmount && (
-                        <div className="rounded-xl bg-sky-50 px-5 py-3 shadow-lg ">
+                    {waterAmount != null && (
+                        <div className="rounded-xl bg-sky-50 p-3 shadow-lg ">
                             <p className="text-xs uppercase tracking-wider text-slate-500">
                                 Water Content
                             </p>
